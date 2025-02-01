@@ -2,17 +2,17 @@ import styles from "../styles/components/navbar.module.css";
 const Navbar = () => {
   return (
     <nav>
-      <ul className="">
-        <li>WaterfallShop</li>
+      <ul className={styles.navbar}>
+        <li className={styles.logo}>WaterfallShop</li>
         <li>
-          <ul>
+          <ul className={styles.navigationLink}>
             <li>Home</li>
             <li>Shop</li>
             <li>Contacts</li>
           </ul>
         </li>
         <li>
-          <ul>
+          <ul className={styles.others}>
             <li>Cart</li>
             <li>Search</li>
             <li>Log in</li>

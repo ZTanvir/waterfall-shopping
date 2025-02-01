@@ -1,2 +1,17 @@
+.navbar li {
+  list-style: none;
+}
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.navbar ul {
+  padding: 0;
+  list-style: none;
+}
+:is(.navigationLink, .others) {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
