@@ -4,6 +4,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 }
 .navbar ul {
@@ -12,6 +13,27 @@
 }
 :is(.navigationLink, .others) {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
+}
+.logo > img {
+  max-width: 150px;
+}
+
+.navigationLink {
+  font-size: 2rem;
+}
+.others__shoppingCart {
+  display: flex;
+  position: relative;
+}
+.others__shoppingCart__items {
+  border: 1px solid;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  left: 27px;
+  top: -10px;
 }
