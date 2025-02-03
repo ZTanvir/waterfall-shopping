@@ -1,31 +1,52 @@
 import styles from "../styles/components/navbar.module.css";
 import LogoImg from "../assets/images/logo/waterfall-shop-logo.png";
 import Cart from "../assets/images/shopping-bag.png";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import Btn from "./Btn";
 const Navbar = ({ cartItems = 10 }) => {
   return (
     <nav>
       <ul className={styles.navbar}>
         <li className={styles.logo}>
-          <Link to="/">
+          <NavLink to="/">
             <img
               src={LogoImg}
               className={styles.logo__Img}
               alt="Waterfall shop brand logo"
             />
-          </Link>
+          </NavLink>
         </li>
         <li>
           <ul className={styles.navigationLink}>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? styles.activeLink : "notActive"
+                }
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to="/shop">Shop</Link>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? styles.activeLink : "notActive"
+                }
+                to="/shop"
+              >
+                Shop
+              </NavLink>
             </li>
             <li>
-              <Link to="/contacts">Contacts</Link>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? styles.activeLink : "notActive"
+                }
+                to="/contacts"
+              >
+                Contacts
+              </NavLink>
             </li>
           </ul>
         </li>
@@ -39,9 +60,9 @@ const Navbar = ({ cartItems = 10 }) => {
             </li>
             <li>Search</li>
             <li>
-              <Link to="/login">
+              <NavLink to="/login">
                 <Btn text="Log in" />
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </li>

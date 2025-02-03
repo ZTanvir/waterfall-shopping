@@ -18,6 +18,7 @@
   flex-wrap: wrap;
   align-items: center;
 }
+
 .logo__Img {
   max-width: 150px;
 }
@@ -45,4 +46,24 @@
   color: white;
   font-size: 1rem;
   font-weight: 600;
+}
+.navigationLink .activeLink {
+  font-weight: 400;
+}
+/* Add underline on navigation link home,shop,contacts */
+.navigationLink > li > a {
+  position: relative;
+}
+.navigationLink > li > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-orange);
+  transition: width 0.3s ease;
+}
+.navigationLink > li > a:hover::after {
+  width: 100%;
 }
