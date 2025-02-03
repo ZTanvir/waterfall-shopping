@@ -2,6 +2,7 @@ import styles from "../styles/components/navbar.module.css";
 import LogoImg from "../assets/images/logo/waterfall-shop-logo.png";
 import Cart from "../assets/images/shopping-bag.png";
 import { Link } from "react-router";
+import Btn from "./Btn";
 const Navbar = ({ cartItems = 10 }) => {
   return (
     <nav>
@@ -37,7 +38,11 @@ const Navbar = ({ cartItems = 10 }) => {
               </span>
             </li>
             <li>Search</li>
-            <li>Log in</li>
+            <li>
+              <Link to="/login">
+                <Btn text="Log in" />
+              </Link>
+            </li>
           </ul>
         </li>
       </ul>
