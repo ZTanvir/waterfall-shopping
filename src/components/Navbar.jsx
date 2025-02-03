@@ -7,7 +7,13 @@ const Navbar = ({ cartItems = 10 }) => {
     <nav>
       <ul className={styles.navbar}>
         <li className={styles.logo}>
-          <img src={LogoImg} alt="Waterfall shop brand logo" />
+          <Link to="/">
+            <img
+              src={LogoImg}
+              className={styles.logo__Img}
+              alt="Waterfall shop brand logo"
+            />
+          </Link>
         </li>
         <li>
           <ul className={styles.navigationLink}>
