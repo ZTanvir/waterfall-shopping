@@ -1,0 +1,15 @@
+.footer__wrapper {
+  background-color: var(--color-orange);
+  padding: 0.75rem 0rem;
+  color: white;
+}
+.footer__wrapper > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1.1rem;
+}
+.footer__wrapper__img {
+  width: 20px;
+}
