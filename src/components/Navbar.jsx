@@ -1,6 +1,7 @@
 import styles from "../styles/components/navbar.module.css";
 import LogoImg from "../assets/images/logo/waterfall-shop-logo.png";
 import Cart from "../assets/images/shopping-bag.png";
+import { Link } from "react-router";
 const Navbar = ({ cartItems = 10 }) => {
   return (
     <nav>
@@ -10,9 +11,15 @@ const Navbar = ({ cartItems = 10 }) => {
         </li>
         <li>
           <ul className={styles.navigationLink}>
-            <li>Home</li>
-            <li>Shop</li>
-            <li>Contacts</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/shop">Shop</Link>
+            </li>
+            <li>
+              <Link to="/contacts">Contacts</Link>
+            </li>
           </ul>
         </li>
         <li>
