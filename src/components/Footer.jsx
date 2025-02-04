@@ -6,7 +6,7 @@ const Footer = ({}) => {
     <footer className={styles.footer__wrapper}>
       <p>
         <span>Copyright © {currentYear} zopel</span>
-        <a href="">
+        <a href="https://github.com/ZTanvir">
           <img
             src={githubImg}
             alt="github cat logo"
