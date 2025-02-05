@@ -4,8 +4,12 @@ import Home from "./page/Home";
 import Shop from "./page/Shop";
 import Contacts from "./page/Contacts";
 import Login from "./page/Login";
+import service from "./services/products";
 
 function App() {
+  const { products, isLoading, isError } = service.getAll();
+  console.log(products, isLoading, isError);
+
   return (
     <>
       <Routes>
