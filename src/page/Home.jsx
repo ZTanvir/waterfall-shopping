@@ -3,31 +3,34 @@ import Footer from "../components/Footer";
 import Btn from "../components/Btn";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router";
+import styles from "../styles/page/home.module.css";
 const Home = () => {
   return (
-    <>
+    <div className={styles.homepage}>
       <header>
         <Navbar />
       </header>
       <main>
-        <section>
-          <h1 className="">
-            The most <span>beautiful</span> and <span>high-quality</span>
-            products in the whole world.
+        <section className={styles.about}>
+          <h1 className={styles.title}>
+            The most <span className={styles.underline}>beautiful</span> and
+            <span className={styles.underline}> high-quality</span> products in
+            the whole world.
           </h1>
-          <p>
+          <p className={styles.subtitle}>
             Shop the latest trends and must-have products from the comfort of
             your home. Fast shipping and amazing customer service guaranteed.
           </p>
-
           <Link to="/shop">
             <Btn text="Explore Now" />
           </Link>
         </section>
-        <ProductCard />
+        <div className={styles.singleDemoProduct}>
+          <ProductCard />
+        </div>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 export default Home;

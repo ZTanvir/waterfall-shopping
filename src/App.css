@@ -67,8 +67,7 @@ a {
   font-family: "Lato", serif;
   --color-orange: #fd8432;
 }
-.products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+
+:is(html, body, #root) {
+  height: 100%;
 }
