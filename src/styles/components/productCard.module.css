@@ -1,0 +1,27 @@
+.product__container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(65, 64, 64);
+  border-radius: 0.5rem;
+  height: 300px;
+}
+.product__img {
+  padding: 1rem 0rem;
+  justify-self: center;
+  align-self: center;
+  width: 50%;
+  height: 75%;
+}
+.product_information {
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-top: 2px solid rgb(65, 64, 64);
+}
+.product__price {
+  color: var(--color-orange);
+}
+:is(.product_information, .product__price) {
+  font-weight: 700;
+}
