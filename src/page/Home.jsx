@@ -4,7 +4,7 @@ import Btn from "../components/Btn";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router";
 import styles from "../styles/page/home.module.css";
-const Home = () => {
+const Home = ({ cardData }) => {
   return (
     <div className={styles.homepage}>
       <header>
@@ -26,7 +26,7 @@ const Home = () => {
           </Link>
         </section>
         <div className={styles.singleDemoProduct}>
-          <ProductCard />
+          {cardData.isLoading ? <h1>Loading</h1> : <ProductCard />}
         </div>
       </main>
       <Footer />
