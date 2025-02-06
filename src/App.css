@@ -67,6 +67,7 @@ a {
   font-family: "Lato", serif;
   --color-orange: #fd8432;
   --color-light-gray: #f3f3f3;
+  --color-border-gray: rgb(65, 64, 64);
 }
 
 :is(html, body, #root) {
