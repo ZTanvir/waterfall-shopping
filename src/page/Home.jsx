@@ -4,6 +4,7 @@ import Btn from "../components/Btn";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router";
 import styles from "../styles/page/home.module.css";
+import Loading from "../components/Loading";
 const Home = ({ cardData }) => {
   return (
     <div className={styles.homepage}>
@@ -26,7 +27,7 @@ const Home = ({ cardData }) => {
           </Link>
         </section>
         <div className={styles.singleDemoProduct}>
-          {cardData.isLoading ? <h1>Loading</h1> : <ProductCard />}
+          {!cardData.isLoading ? <Loading /> : <ProductCard />}
         </div>
       </main>
       <Footer />
