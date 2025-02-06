@@ -4,8 +4,14 @@ import Btn from "../components/Btn";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router";
 import styles from "../styles/page/home.module.css";
-import Loading from "../components/Loading";
+import helperFunction from "../utils/helperFunction";
+
 const Home = ({ cardData }) => {
+  const { data, isLoading, isError } = cardData;
+
+  // Get a single product from all the products
+  const getSingleCardData = helperFunction.getRandomItems(data);
+
   return (
     <div className={styles.homepage}>
       <header>
@@ -27,7 +33,11 @@ const Home = ({ cardData }) => {
           </Link>
         </section>
         <div className={styles.singleDemoProduct}>
-          {!cardData.isLoading ? <Loading /> : <ProductCard />}
+          <ProductCard
+            product={getSingleCardData}
+            isLoading={isLoading}
+            isError={isError}
+          />
         </div>
       </main>
       <Footer />

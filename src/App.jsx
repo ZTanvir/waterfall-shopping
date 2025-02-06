@@ -7,15 +7,14 @@ import Login from "./page/Login";
 import productService from "./services/products";
 
 function App() {
-  const { products, isLoading, isError } = productService.getAll();
-  console.log(products, isLoading, isError);
+  const { data, isLoading, isError } = productService.getAll();
 
   return (
     <>
       <Routes>
         <Route
           path="/"
-          element={<Home cardData={{ products, isLoading, isError }} />}
+          element={<Home cardData={{ data, isLoading, isError }} />}
         />
         <Route path="/shop" element={<Shop />} />
         <Route path="/contacts" element={<Contacts />} />

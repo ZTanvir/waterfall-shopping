@@ -1,10 +1,21 @@
-.product__container {
+:is(.product__loading, .product__error) {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  border: 2px solid rgb(65, 64, 64);
+  border-radius: 0.5rem;
+}
+:is(.product__container, .product__loading, .product__error) {
   border: 2px solid rgb(65, 64, 64);
   border-radius: 0.5rem;
   height: 300px;
 }
+.product__container {
+  display: flex;
+  flex-direction: column;
+}
+
 .product__img {
   padding: 1rem 0rem;
   justify-self: center;
