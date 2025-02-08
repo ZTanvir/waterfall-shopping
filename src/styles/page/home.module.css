@@ -49,17 +49,7 @@ main {
   flex-basis: 40%;
   position: relative;
 }
-.belowCard {
-  border: 2px solid var(--color-border-gray);
-  border-radius: 16px;
-  top: 10px;
-  left: 25px;
-  position: absolute;
-  width: 98%;
-  height: 92%;
-  background-color: var(--color-orange);
-  z-index: -1;
-}
+
 footer {
   margin-top: auto;
 }

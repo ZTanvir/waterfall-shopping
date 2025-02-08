@@ -38,7 +38,6 @@ const Home = ({ cardData }) => {
             isLoading={isLoading}
             isError={isError}
           />
-          <div className={styles.belowCard}></div>
         </div>
       </main>
       <Footer />
