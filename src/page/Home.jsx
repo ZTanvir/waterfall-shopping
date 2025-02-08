@@ -28,7 +28,7 @@ const Home = ({ cardData }) => {
             Shop the latest trends and must-have products from the comfort of
             your home. Fast shipping and amazing customer service guaranteed.
           </p>
-          <Link to="/shop">
+          <Link className={styles.shopPageLink} to="/shop">
             <Btn text="Explore Now" />
           </Link>
         </section>

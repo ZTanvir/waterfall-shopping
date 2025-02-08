@@ -22,6 +22,10 @@ main {
 .title {
   font-size: 3rem;
 }
+/* Explore More Link */
+.shopPageLink {
+  align-self: flex-start;
+}
 
 .underline {
   position: relative;
