@@ -1,0 +1,31 @@
+.searchField__wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+.searchField__wrapper > input[type="text"] {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  padding: 0.5rem;
+  border: 1px solid var(--color-light-border);
+  font-weight: 300;
+}
+.searchField__wrapper > input[type="text"]:focus {
+  outline: 1px dotted var(--color-light-border);
+}
+.searchField__wrapper > button[type="submit"] {
+  background-color: var(--color-orange);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+:is(
+    .searchField__wrapper > button[type="submit"]:focus,
+    .searchField__wrapper > button[type="submit"]:hover
+  ) {
+  background-color: var(--color-dark-orange);
+}
+.searchIcon {
+  width: 30px;
+}
