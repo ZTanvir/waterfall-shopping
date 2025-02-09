@@ -7,8 +7,6 @@ const Shop = ({ cardData }) => {
   const { data, isLoading, isError } = cardData;
 
   const dependency = data === undefined ? data : data.length;
-  console.log("dependency", dependency);
-  console.log("product", products);
 
   useEffect(() => {
     if (data) {
