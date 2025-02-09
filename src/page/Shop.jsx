@@ -7,6 +7,7 @@ const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
   const { data, isLoading, isError } = cardData;
 
+  // use effect dependency variable
   const dependency = data === undefined ? data : data.length;
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const Shop = ({ cardData }) => {
         <Navbar />
       </header>
       <main>
+        <aside></aside>
         <ProductCards
           products={products}
           isLoading={isLoading}
