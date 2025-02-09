@@ -16,7 +16,10 @@ function App() {
           path="/"
           element={<Home cardData={{ data, isLoading, isError }} />}
         />
-        <Route path="/shop" element={<Shop />} />
+        <Route
+          path="/shop"
+          element={<Shop cardData={{ data, isLoading, isError }} />}
+        />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/login" element={<Login />} />
       </Routes>

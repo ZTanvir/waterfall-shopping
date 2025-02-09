@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100%;
 }
-main {
+.homepage > main {
   max-width: 1400px;
   margin: 0 auto;
   margin-top: 2rem;
