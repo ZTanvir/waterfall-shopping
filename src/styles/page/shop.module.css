@@ -3,6 +3,10 @@
   flex-direction: column;
   height: 100%;
 }
+.shopPage > main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
 .shopPage > footer {
   margin-top: auto;
 }

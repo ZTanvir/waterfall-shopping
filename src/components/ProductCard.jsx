@@ -4,6 +4,7 @@ import { useLocation, Link } from "react-router";
 
 const ProductCard = ({ product, isLoading, isError }) => {
   const pagePathName = useLocation().pathname;
+  const checkPathName = String(pagePathName).toLowerCase().includes("shop");
 
   return (
     <section className={styles.product__container}>
@@ -31,7 +32,7 @@ const ProductCard = ({ product, isLoading, isError }) => {
       {/* Hide below card in shop page, only show on hover */}
       <div
         className={`${styles.belowCard} ${
-          pagePathName === "shop" && styles.hideBelowCard
+          checkPathName && styles.hideBelowCard
         }`}
       ></div>
     </section>

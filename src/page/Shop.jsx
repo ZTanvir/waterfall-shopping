@@ -1,6 +1,7 @@
 import styles from "../styles/page/shop.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ProductCards from "../components/ProductCards";
 import { useEffect, useState } from "react";
 const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
@@ -19,7 +20,13 @@ const Shop = ({ cardData }) => {
       <header>
         <Navbar />
       </header>
-      <main></main>
+      <main>
+        <ProductCards
+          products={products}
+          isLoading={isLoading}
+          isError={isError}
+        />
+      </main>
       <Footer />
     </div>
   );
