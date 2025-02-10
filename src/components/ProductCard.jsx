@@ -19,7 +19,7 @@ const ProductCard = ({ product, isLoading, isError }) => {
         </div>
       )}
       {product && (
-        <Link className={styles.productCard} to={`shop/${product.id}`}>
+        <Link className={styles.productCard} to={`/shop/${product.id}`}>
           <div className={styles.productCard}>
             <img className={styles.product__img} src={product.image} alt="" />
             <p className={styles.product_information}>
