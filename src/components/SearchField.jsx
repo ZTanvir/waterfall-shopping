@@ -1,6 +1,6 @@
 import searchIconImg from "../assets/images/search-icon-white.svg";
 import styles from "../styles/components/searchField.module.css";
-const SearchField = ({ text, setText }) => {
+const SearchField = ({ text, setText, placeHolder }) => {
   return (
     <form
       className={styles.searchField__wrapper}
@@ -13,6 +13,7 @@ const SearchField = ({ text, setText }) => {
         type="text"
         name="search"
         id="search-box"
+        placeholder={placeHolder}
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
