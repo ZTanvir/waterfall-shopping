@@ -39,7 +39,11 @@ const Shop = ({ cardData }) => {
       </header>
       <main>
         <aside>
-          <SearchField text={searchText} setText={setSearchText} />
+          <SearchField
+            text={searchText}
+            setText={setSearchText}
+            placeHolder="Search products.."
+          />
         </aside>
         <ProductCards
           products={products}
