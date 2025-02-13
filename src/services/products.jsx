@@ -13,6 +13,16 @@ const getAll = () => {
   };
 };
 
+const getAllCategories = () => {
+  const { data, isLoading, error } = useSWR(`${baseUrl}/categories`, fetcher);
+
+  return {
+    data,
+    isLoading,
+    isError: error,
+  };
+};
+
 const getCategoryProducts = (categoryName) => {
   const { data, isLoading, error } = useSWR(
     `${baseUrl}/category/${categoryName}`,
@@ -26,4 +36,4 @@ const getCategoryProducts = (categoryName) => {
   };
 };
 
-export default { getAll, getCategoryProducts };
+export default { getAll, getAllCategories, getCategoryProducts };

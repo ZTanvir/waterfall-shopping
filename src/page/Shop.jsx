@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import ProductCards from "../components/ProductCards";
 import SearchField from "../components/SearchField";
 import { useEffect, useState } from "react";
-
+import ProductCategories from "../components/ProductCategories";
 const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
   const [searchText, setSearchText] = useState("");
@@ -40,6 +40,7 @@ const Shop = ({ cardData }) => {
       </header>
       <main>
         <aside>
+          <ProductCategories setProduct={setProducts} />
           <SearchField
             text={searchText}
             setText={setSearchText}
