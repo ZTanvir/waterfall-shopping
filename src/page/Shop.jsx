@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import ProductCards from "../components/ProductCards";
 import SearchField from "../components/SearchField";
 import { useEffect, useState } from "react";
+
 const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
   const [searchText, setSearchText] = useState("");

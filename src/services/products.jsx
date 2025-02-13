@@ -12,6 +12,18 @@ const getAll = () => {
     isError: error,
   };
 };
-const getCategoryProducts = () => {};
 
-export default { getAll };
+const getCategoryProducts = (categoryName) => {
+  const { data, isLoading, error } = useSWR(
+    `${baseUrl}/category/${categoryName}`,
+    fetcher
+  );
+
+  return {
+    data,
+    isLoading,
+    isError: error,
+  };
+};
+
+export default { getAll, getCategoryProducts };
