@@ -3,8 +3,9 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProductCards from "../components/ProductCards";
 import SearchField from "../components/SearchField";
-import { useEffect, useState } from "react";
 import ProductCategories from "../components/ProductCategories";
+import { useEffect, useState } from "react";
+
 const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
   const [searchText, setSearchText] = useState("");
@@ -40,12 +41,12 @@ const Shop = ({ cardData }) => {
       </header>
       <main>
         <aside>
-          <ProductCategories setProduct={setProducts} />
           <SearchField
             text={searchText}
             setText={setSearchText}
             placeHolder="Search products.."
           />
+          <ProductCategories setProduct={setProducts} />
         </aside>
         <ProductCards
           products={products}

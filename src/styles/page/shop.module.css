@@ -6,6 +6,14 @@
 .shopPage > main {
   max-width: 1400px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+aside {
+  flex-basis: 25%;
+}
+main > div {
+  flex-basis: 70%;
 }
 .shopPage > footer {
   margin-top: auto;
