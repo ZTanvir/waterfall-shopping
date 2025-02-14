@@ -48,11 +48,13 @@ const Shop = ({ cardData }) => {
           />
           <ProductCategories setProduct={setProducts} />
         </aside>
-        <ProductCards
-          products={products}
-          isLoading={isLoading}
-          isError={isError}
-        />
+        <div>
+          <ProductCards
+            products={products}
+            isLoading={isLoading}
+            isError={isError}
+          />
+        </div>
       </main>
       <Footer />
     </div>

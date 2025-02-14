@@ -8,11 +8,12 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  gap: 5%;
 }
-aside {
+.shopPage > main > aside {
   flex-basis: 25%;
 }
-main > div {
+.shopPage > main > div {
   flex-basis: 70%;
 }
 .shopPage > footer {
