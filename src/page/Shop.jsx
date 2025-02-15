@@ -3,8 +3,11 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProductCards from "../components/ProductCards";
 import SearchField from "../components/SearchField";
-import { useEffect, useState } from "react";
 import ProductCategories from "../components/ProductCategories";
+import SelectField from "../components/SelectField";
+
+import { useEffect, useState } from "react";
+
 const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
   const [searchText, setSearchText] = useState("");
@@ -47,11 +50,19 @@ const Shop = ({ cardData }) => {
             placeHolder="Search products.."
           />
         </aside>
-        <ProductCards
-          products={products}
-          isLoading={isLoading}
-          isError={isError}
-        />
+        <div>
+          <SelectField>
+            <option value="0-18">18 and under</option>
+            <option value="19-39">19 to 39</option>
+            <option value="40-64">40 to 64</option>
+            <option value="65-infinity">65 and over</option>
+          </SelectField>
+          <ProductCards
+            products={products}
+            isLoading={isLoading}
+            isError={isError}
+          />
+        </div>
       </main>
       <Footer />
     </div>
