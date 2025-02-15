@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import ProductCards from "../components/ProductCards";
 import SearchField from "../components/SearchField";
 import ProductCategories from "../components/ProductCategories";
-import SelectField from "../components/SelectField";
+import SortFilter from "../components/SortFilter";
 
 import { useEffect, useState } from "react";
 
@@ -51,12 +51,7 @@ const Shop = ({ cardData }) => {
           />
         </aside>
         <div>
-          <SelectField>
-            <option value="0-18">18 and under</option>
-            <option value="19-39">19 to 39</option>
-            <option value="40-64">40 to 64</option>
-            <option value="65-infinity">65 and over</option>
-          </SelectField>
+          <SortFilter products={products} setProducts={setProducts} />
           <ProductCards
             products={products}
             isLoading={isLoading}
