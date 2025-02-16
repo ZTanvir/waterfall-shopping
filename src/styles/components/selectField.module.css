@@ -1,0 +1,14 @@
+.selectForm {
+  margin: 10px;
+}
+.selectField {
+  background-color: var(--color-light-gray);
+  color: var(--color-dark-gray);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  caret-color: var(--color-orange);
+}
