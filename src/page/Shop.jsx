@@ -4,15 +4,17 @@ import Footer from "../components/Footer";
 import ProductCards from "../components/ProductCards";
 import SearchField from "../components/SearchField";
 import ProductCategories from "../components/ProductCategories";
+import SortFilter from "../components/SortFilter";
 import { useEffect, useState } from "react";
 
 const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
   const [searchText, setSearchText] = useState("");
   const { data, isLoading, isError } = cardData;
+  console.log("shop page");
 
   // use effect dependency variable
-  const dependency = data === undefined ? data : data.length;
+  const dependency = data && data.length;
 
   // update product when new items added to data
   useEffect(() => {
@@ -49,6 +51,7 @@ const Shop = ({ cardData }) => {
           <ProductCategories setProduct={setProducts} />
         </aside>
         <div>
+          <SortFilter products={products} setProducts={setProducts} />
           <ProductCards
             products={products}
             isLoading={isLoading}
