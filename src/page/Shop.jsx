@@ -11,7 +11,6 @@ const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
   const [searchText, setSearchText] = useState("");
   const { data, isLoading, isError } = cardData;
-  console.log("shop page");
 
   // use effect dependency variable
   const dependency = data && data.length;
