@@ -1,0 +1,8 @@
+.shopFilter__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shopFilter__resultMsg {
+  font-size: 1.2rem;
+}
