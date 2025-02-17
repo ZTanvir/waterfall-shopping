@@ -2,14 +2,14 @@ import styles from "../styles/page/shop.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProductCards from "../components/ProductCards";
-import SearchField from "../components/SearchField";
+import SearchProducts from "../components/SearchProducts";
 import ProductCategories from "../components/ProductCategories";
 import SortFilter from "../components/SortFilter";
 import { useEffect, useState } from "react";
 
 const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
-  const [searchText, setSearchText] = useState("");
+  const [displayProduct, setDisplayProduct] = useState(null);
   const { data, isLoading, isError } = cardData;
 
   // use effect dependency variable
@@ -19,21 +19,9 @@ const Shop = ({ cardData }) => {
   useEffect(() => {
     if (data) {
       setProducts(data);
+      setDisplayProduct(data);
     }
   }, [dependency]);
-
-  // filter product that match searchText
-  useEffect(() => {
-    if (searchText) {
-      const filterProduct = data.filter((product) =>
-        product.title.toLowerCase().includes(searchText.toLowerCase())
-      );
-      setProducts(filterProduct);
-    } else {
-      // set product to initial state
-      setProducts(data);
-    }
-  }, [searchText]);
 
   return (
     <div className={styles.shopPage}>
@@ -42,17 +30,13 @@ const Shop = ({ cardData }) => {
       </header>
       <main>
         <aside>
-          <SearchField
-            text={searchText}
-            setText={setSearchText}
-            placeHolder="Search products.."
-          />
+          <SearchProducts products={products} setProducts={setProducts} />
           <ProductCategories setProduct={setProducts} />
         </aside>
         <div>
           <SortFilter products={products} setProducts={setProducts} />
           <ProductCards
-            products={products}
+            displayProducts={products}
             isLoading={isLoading}
             isError={isError}
           />

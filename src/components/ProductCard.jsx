@@ -2,7 +2,7 @@ import styles from "../styles/components/productCard.module.css";
 import Loading from "./Loading";
 import { useLocation, Link } from "react-router";
 
-const ProductCard = ({ product, isLoading, isError }) => {
+const ProductCard = ({ displayProducts, isLoading, isError }) => {
   const pagePathName = useLocation().pathname;
   const checkPathName = String(pagePathName).toLowerCase().includes("shop");
 
@@ -18,13 +18,21 @@ const ProductCard = ({ product, isLoading, isError }) => {
           <Loading />
         </div>
       )}
-      {product && (
-        <Link className={styles.productCard} to={`/shop/${product.id}`}>
+      {displayProducts && (
+        <Link className={styles.productCard} to={`/shop/${displayProducts.id}`}>
           <div className={styles.productCard}>
-            <img className={styles.product__img} src={product.image} alt="" />
+            <img
+              className={styles.product__img}
+              src={displayProducts.image}
+              alt=""
+            />
             <p className={styles.product_information}>
-              <span className={styles.product__name}>{product.title}</span>
-              <span className={styles.product__price}>${product.price}</span>
+              <span className={styles.product__name}>
+                {displayProducts.title}
+              </span>
+              <span className={styles.product__price}>
+                ${displayProducts.price}
+              </span>
             </p>
           </div>
         </Link>
