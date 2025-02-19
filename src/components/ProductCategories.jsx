@@ -3,20 +3,31 @@ import ProductCategory from "../components/ProductCategory";
 import styles from "../styles/components/productCategories.module.css";
 import Loading from "./Loading";
 
-const ProductCategories = ({ setProduct }) => {
+const ProductCategories = ({ allProducts, setProducts }) => {
   const { data, isLoading, isError } = productService.getAllCategories();
 
   if (isLoading) return <Loading />;
+  const handleAllProducts = (e) => {
+    setProducts(allProducts);
+  };
 
   return (
     <section className={styles.all_product_container}>
       <p className={styles.title}>Categories</p>
+      <p onClick={handleAllProducts} className={styles.all_product_title}>
+        <span className={styles.all_product_title__name}>
+          {allProducts && "All products"}
+        </span>
+        <span className={styles.all_product_amount}>
+          {allProducts && ` (${allProducts.length})`}
+        </span>
+      </p>
       {data &&
         data.map((item) => (
           <ProductCategory
             key={item}
             categoryName={item}
-            setProduct={setProduct}
+            setProducts={setProducts}
           />
         ))}
     </section>

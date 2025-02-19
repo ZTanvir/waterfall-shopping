@@ -2,14 +2,13 @@ import styles from "../styles/page/shop.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProductCards from "../components/ProductCards";
-import SearchField from "../components/SearchField";
 import ProductCategories from "../components/ProductCategories";
 import SortFilter from "../components/SortFilter";
 import { useEffect, useState } from "react";
+import SearchFilter from "../components/SearchFilter";
 
 const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
-  const [searchText, setSearchText] = useState("");
   const { data, isLoading, isError } = cardData;
 
   // use effect dependency variable
@@ -22,19 +21,6 @@ const Shop = ({ cardData }) => {
     }
   }, [dependency]);
 
-  // filter product that match searchText
-  useEffect(() => {
-    if (searchText) {
-      const filterProduct = data.filter((product) =>
-        product.title.toLowerCase().includes(searchText.toLowerCase())
-      );
-      setProducts(filterProduct);
-    } else {
-      // set product to initial state
-      setProducts(data);
-    }
-  }, [searchText]);
-
   return (
     <div className={styles.shopPage}>
       <header>
@@ -42,12 +28,8 @@ const Shop = ({ cardData }) => {
       </header>
       <main>
         <aside>
-          <SearchField
-            text={searchText}
-            setText={setSearchText}
-            placeHolder="Search products.."
-          />
-          <ProductCategories setProduct={setProducts} />
+          <SearchFilter products={products} setProducts={setProducts} />
+          <ProductCategories setProducts={setProducts} allProducts={data} />
         </aside>
         <div>
           <SortFilter products={products} setProducts={setProducts} />

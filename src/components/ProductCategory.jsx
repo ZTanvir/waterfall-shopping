@@ -1,7 +1,7 @@
 import productService from "../services/products";
 import styles from "../styles/components/productCategory.module.css";
 
-const ProductCategory = ({ categoryName, setProduct }) => {
+const ProductCategory = ({ categoryName, setProducts }) => {
   const { data, isLoading, isError } =
     productService.getCategoryProducts(categoryName);
 
@@ -13,7 +13,7 @@ const ProductCategory = ({ categoryName, setProduct }) => {
     );
 
   const handleProductClick = (e) => {
-    setProduct(data);
+    setProducts(data);
   };
   return (
     <div onClick={handleProductClick} className={styles.product__wrapper}>
