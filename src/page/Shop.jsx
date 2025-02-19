@@ -4,11 +4,12 @@ import Footer from "../components/Footer";
 import ProductCards from "../components/ProductCards";
 import ProductCategories from "../components/ProductCategories";
 import SortFilter from "../components/SortFilter";
-import { useEffect, useState } from "react";
 import SearchFilter from "../components/SearchFilter";
+import { useEffect, useState } from "react";
 
 const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
+  const [isCategoryEnable, setCategoryEnable] = useState(null);
   const { data, isLoading, isError } = cardData;
 
   // use effect dependency variable
@@ -29,7 +30,11 @@ const Shop = ({ cardData }) => {
       <main>
         <aside>
           <SearchFilter products={products} setProducts={setProducts} />
-          <ProductCategories setProducts={setProducts} allProducts={data} />
+          <ProductCategories
+            setProducts={setProducts}
+            allProducts={data}
+            setCategoryEnable={setCategoryEnable}
+          />
         </aside>
         <div>
           <SortFilter products={products} setProducts={setProducts} />

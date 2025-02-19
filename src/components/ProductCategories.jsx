@@ -3,12 +3,13 @@ import ProductCategory from "../components/ProductCategory";
 import styles from "../styles/components/productCategories.module.css";
 import Loading from "./Loading";
 
-const ProductCategories = ({ allProducts, setProducts }) => {
+const ProductCategories = ({ allProducts, setProducts, setCategoryEnable }) => {
   const { data, isLoading, isError } = productService.getAllCategories();
 
   if (isLoading) return <Loading />;
   const handleAllProducts = (e) => {
     setProducts(allProducts);
+    setCategoryEnable(false);
   };
 
   return (
@@ -26,6 +27,7 @@ const ProductCategories = ({ allProducts, setProducts }) => {
         data.map((item) => (
           <ProductCategory
             key={item}
+            setCategoryEnable={setCategoryEnable}
             categoryName={item}
             setProducts={setProducts}
           />
