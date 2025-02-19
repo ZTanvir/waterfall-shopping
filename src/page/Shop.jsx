@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
-  const [isCategoryEnable, setCategoryEnable] = useState(null);
+  const [isCategoryEnable, setCategoryEnable] = useState(false);
   const { data, isLoading, isError } = cardData;
 
   // use effect dependency variable
@@ -37,7 +37,11 @@ const Shop = ({ cardData }) => {
           />
         </aside>
         <div>
-          <SortFilter products={products} setProducts={setProducts} />
+          <SortFilter
+            products={products}
+            setProducts={setProducts}
+            isCategoryEnable={isCategoryEnable}
+          />
           <ProductCards
             products={products}
             isLoading={isLoading}

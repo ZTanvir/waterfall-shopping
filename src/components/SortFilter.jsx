@@ -2,11 +2,17 @@ import SelectField from "./SelectField";
 import { useEffect, useState } from "react";
 import styles from "../styles/components/sortFilter.module.css";
 
-const SortFilter = ({ products, setProducts }) => {
+const SortFilter = ({ products, setProducts, isCategoryEnable }) => {
   const [selectFilter, setSelectFilter] = useState("default");
   const [initialProduct, setInitialProduct] = useState(null);
 
-  const productCategory = products && products[0].category;
+  /* 
+    Set initial product and select filter based on
+    does the user in category section or not 
+  */
+  const productCategory = isCategoryEnable
+    ? products && products[0].category
+    : products && products.length;
 
   useEffect(() => {
     if (selectFilter === "default") {
