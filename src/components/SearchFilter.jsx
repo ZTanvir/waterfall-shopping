@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import SearchField from "./SearchField";
-const SearchFilter = ({ products, setProducts, isCategoryEnable }) => {
-  const [searchText, setSearchText] = useState("");
+const SearchFilter = ({
+  searchText,
+  setSearchText,
+  products,
+  setProducts,
+  isCategoryEnable,
+}) => {
   const [initialProduct, setInitialProduct] = useState(null);
 
   const initialProductDependency = isCategoryEnable
@@ -23,16 +28,10 @@ const SearchFilter = ({ products, setProducts, isCategoryEnable }) => {
   }, [searchText]);
 
   useEffect(() => {
-    console.log("inside use effect:", initialProductDependency);
     if (products) {
       setInitialProduct(products);
     }
   }, [initialProductDependency]);
-
-  console.log("outside use effect:");
-  console.log("products:", products);
-  console.log("initial products:", initialProduct);
-  console.log("initialProductDependency:", initialProductDependency);
 
   return (
     <SearchField

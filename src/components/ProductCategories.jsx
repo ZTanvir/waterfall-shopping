@@ -3,13 +3,19 @@ import ProductCategory from "../components/ProductCategory";
 import styles from "../styles/components/productCategories.module.css";
 import Loading from "./Loading";
 
-const ProductCategories = ({ allProducts, setProducts, setCategoryEnable }) => {
+const ProductCategories = ({
+  allProducts,
+  setProducts,
+  setCategoryEnable,
+  setSearchText,
+}) => {
   const { data, isLoading, isError } = productService.getAllCategories();
 
   if (isLoading) return <Loading />;
   const handleAllProducts = (e) => {
     setProducts(allProducts);
     setCategoryEnable(false);
+    setSearchText("");
   };
 
   return (
@@ -30,6 +36,7 @@ const ProductCategories = ({ allProducts, setProducts, setCategoryEnable }) => {
             setCategoryEnable={setCategoryEnable}
             categoryName={item}
             setProducts={setProducts}
+            setSearchText={setSearchText}
           />
         ))}
     </section>

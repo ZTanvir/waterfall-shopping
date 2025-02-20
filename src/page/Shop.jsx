@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 const Shop = ({ cardData }) => {
   const [products, setProducts] = useState(null);
   const [isCategoryEnable, setCategoryEnable] = useState(false);
+  const [searchText, setSearchText] = useState("");
   const { data, isLoading, isError } = cardData;
 
   // use effect dependency variable
@@ -30,6 +31,8 @@ const Shop = ({ cardData }) => {
       <main>
         <aside>
           <SearchFilter
+            searchText={searchText}
+            setSearchText={setSearchText}
             products={products}
             setProducts={setProducts}
             isCategoryEnable={isCategoryEnable}
@@ -38,6 +41,7 @@ const Shop = ({ cardData }) => {
             setProducts={setProducts}
             allProducts={data}
             setCategoryEnable={setCategoryEnable}
+            setSearchText={setSearchText}
           />
         </aside>
         <div>
