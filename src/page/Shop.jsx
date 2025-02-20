@@ -29,7 +29,11 @@ const Shop = ({ cardData }) => {
       </header>
       <main>
         <aside>
-          <SearchFilter products={products} setProducts={setProducts} />
+          <SearchFilter
+            products={products}
+            setProducts={setProducts}
+            isCategoryEnable={isCategoryEnable}
+          />
           <ProductCategories
             setProducts={setProducts}
             allProducts={data}

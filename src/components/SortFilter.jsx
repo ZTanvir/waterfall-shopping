@@ -11,8 +11,10 @@ const SortFilter = ({ products, setProducts, isCategoryEnable }) => {
     does the user in category section or not 
   */
   const productCategory = isCategoryEnable
-    ? products && products[0].category
-    : products && products.length;
+    ? products && products.length > 0
+      ? products[0].category
+      : products && initialProduct[0].category
+    : products && true;
 
   useEffect(() => {
     if (selectFilter === "default") {
