@@ -6,6 +6,8 @@ const ProductCategory = ({
   setProducts,
   setCategoryEnable,
   setSearchText,
+  productCategories,
+  setProductCategories,
 }) => {
   const { data, isLoading, isError } =
     productService.getCategoryProducts(categoryName);
@@ -18,16 +20,35 @@ const ProductCategory = ({
     );
 
   const handleProductClick = (e) => {
+    // set all category checkbox value to false
+    for (let category in productCategories) {
+      productCategories[category] = false;
+    }
+    setProductCategories({
+      ...productCategories,
+      [categoryName]: true,
+    });
     setProducts(data);
     setCategoryEnable(true);
     setSearchText("");
   };
+
   return (
-    <div onClick={handleProductClick} className={styles.product__wrapper}>
-      <span className={styles.product__name}>{data && categoryName}</span>
-      <span className={styles.product__amount}>
-        {data && `(${data.length})`}
-      </span>
+    <div className={styles.product__wrapper}>
+      <input
+        type="checkbox"
+        name={categoryName}
+        id={`${categoryName}-checkbox`}
+        value={categoryName}
+        checked={productCategories[categoryName] === true}
+        onChange={handleProductClick}
+      />
+      <label htmlFor={`${categoryName}-checkbox`}>
+        <span className={styles.product__name}>{data && categoryName}</span>
+        <span className={styles.product__amount}>
+          {data && `(${data.length})`}
+        </span>
+      </label>
     </div>
   );
 };
