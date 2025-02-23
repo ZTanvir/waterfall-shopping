@@ -43,7 +43,7 @@ const ProductCategories = ({
     <section className={styles.all_product_container}>
       <p className={styles.title}>Categories</p>
 
-      <form>
+      <form className={styles.categoriesForm}>
         <div className={styles.all_product_category}>
           <input
             type="checkbox"

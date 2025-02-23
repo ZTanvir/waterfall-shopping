@@ -11,3 +11,10 @@
 }
 .product__amount {
 }
+:is(
+    .product__wrapper,
+    .product__wrapper > input[type="checkbox"],
+    .product__wrapper > label
+  ) {
+  cursor: pointer;
+}

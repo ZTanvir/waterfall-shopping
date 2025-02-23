@@ -9,8 +9,20 @@
   gap: 0.5rem;
   padding-left: 1.5rem;
   font-size: 1.2rem;
-  cursor: pointer;
 }
+
 .all_product_title__name {
   color: var(--color-orange);
+}
+
+:is(
+    .all_product_category,
+    .all_product_category > input[type="checkbox"],
+    .all_product_category > label
+  ) {
+  cursor: pointer;
+}
+
+.categoriesForm input[type="checkbox"] {
+  accent-color: orange;
 }
