@@ -21,11 +21,12 @@ const ProductCategory = ({
 
   const handleProductClick = (e) => {
     // set all category checkbox value to false
+    const updateProductCategories = {};
     for (let category in productCategories) {
-      productCategories[category] = false;
+      updateProductCategories[category] = false;
     }
     setProductCategories({
-      ...productCategories,
+      ...updateProductCategories,
       [categoryName]: true,
     });
     setProducts(data);

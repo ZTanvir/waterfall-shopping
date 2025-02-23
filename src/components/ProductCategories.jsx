@@ -4,10 +4,6 @@ import styles from "../styles/components/productCategories.module.css";
 import Loading from "./Loading";
 import { useState, useEffect } from "react";
 
-let initialProductCategory = {
-  allProducts: true,
-};
-
 const ProductCategories = ({
   allProducts,
   setProducts,
@@ -15,21 +11,25 @@ const ProductCategories = ({
   setSearchText,
 }) => {
   const { data, isLoading, isError } = productService.getAllCategories();
-  const [productCategories, setProductCategories] = useState(
-    initialProductCategory
-  );
+  const [productCategories, setProductCategories] = useState({});
 
   useEffect(() => {
     if (data) {
+      const initialProductCategory = { everyProducts: true };
       data.forEach((category) => (initialProductCategory[category] = false));
-      setProductCategories(initialProductCategory);
+      console.log("Render", initialProductCategory, data, isLoading, isError);
+      setProductCategories({ ...initialProductCategory });
     }
   }, [data && data.length]);
 
   const handleAllProducts = (e) => {
+    const updateProductCategories = {};
+    for (let category in productCategories) {
+      updateProductCategories[category] = false;
+    }
     setProductCategories({
-      ...initialProductCategory,
-      allProducts: true,
+      ...updateProductCategories,
+      everyProducts: true,
     });
     setProducts(allProducts);
     setCategoryEnable(false);
@@ -38,10 +38,11 @@ const ProductCategories = ({
 
   if (isLoading) return <Loading />;
 
+  if (isError) return <div>Can't load due to an error.Please reload.</div>;
+
   return (
     <section className={styles.all_product_container}>
       <p className={styles.title}>Categories</p>
-      {/* <p onClick={handleAllProducts} className={styles.all_product_title}> */}
 
       <form>
         <div className={styles.all_product_category}>
@@ -49,7 +50,7 @@ const ProductCategories = ({
             type="checkbox"
             name="all-products"
             id="products"
-            checked={productCategories["allProducts"] === true}
+            checked={productCategories["everyProducts"] === true}
             value={"all-products"}
             onChange={handleAllProducts}
           />
