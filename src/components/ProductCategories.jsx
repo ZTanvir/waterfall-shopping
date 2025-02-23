@@ -17,7 +17,6 @@ const ProductCategories = ({
     if (data) {
       const initialProductCategory = { everyProducts: true };
       data.forEach((category) => (initialProductCategory[category] = false));
-      console.log("Render", initialProductCategory, data, isLoading, isError);
       setProductCategories({ ...initialProductCategory });
     }
   }, [data && data.length]);
