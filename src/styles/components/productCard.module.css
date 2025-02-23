@@ -16,10 +16,27 @@
   flex-direction: column;
   position: relative;
 }
+.product__wrapper {
+  height: 100%;
+}
 .productCard {
   display: flex;
   flex-direction: column;
+  position: relative;
   height: 100%;
+}
+.product__rating {
+  position: absolute;
+  padding: 0.5rem;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+.product__rating > img {
+  width: 20px;
+  object-fit: contain;
 }
 .product__img {
   padding: 1rem 0rem;

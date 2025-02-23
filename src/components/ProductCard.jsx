@@ -1,5 +1,6 @@
 import styles from "../styles/components/productCard.module.css";
 import Loading from "./Loading";
+import starImg from "../assets/images/star.png";
 import { useLocation, Link } from "react-router";
 
 const ProductCard = ({ product, isLoading, isError }) => {
@@ -19,9 +20,13 @@ const ProductCard = ({ product, isLoading, isError }) => {
         </div>
       )}
       {product && (
-        <Link className={styles.productCard} to={`/shop/${product.id}`}>
+        <Link className={styles.product__wrapper} to={`/shop/${product.id}`}>
           <div className={styles.productCard}>
             <img className={styles.product__img} src={product.image} alt="" />
+            <span className={styles.product__rating}>
+              {product.rating.rate && <img src={starImg} alt="" />}{" "}
+              {product.rating.rate}
+            </span>
             <p className={styles.product_information}>
               <span className={styles.product__name}>{product.title}</span>
               <span className={styles.product__price}>${product.price}</span>
