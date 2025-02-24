@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import { useState } from "react";
 import styles from "../styles/page/singleProduct.module.css";
+import ProductSize from "../components/ProductSize";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
@@ -15,6 +16,10 @@ const SingleProduct = ({ cardData }) => {
 
   const handleBtn = () => {
     console.log("Btn clicked", amount, product);
+  };
+  const handleProductSizeBtn = (e) => {
+    console.log(e.target.textContent);
+    console.log("size");
   };
 
   if (isLoading)
@@ -39,9 +44,6 @@ const SingleProduct = ({ cardData }) => {
             <h1 className={styles.singleProduct__title}>
               {product && product.title}
             </h1>
-            <p className={styles.singleProduct__descriptions}>
-              {product && product.description}
-            </p>
             <p className={styles.singleProduct__price}>
               <span className={styles.singleProduct__price__title}>
                 Price :
@@ -52,6 +54,9 @@ const SingleProduct = ({ cardData }) => {
               <Counter amount={amount} setAmount={setAmount} />
               <Btn text="ADD TO CART" handleBtn={handleBtn} />
             </div>
+            <p className={styles.singleProduct__descriptions}>
+              {product && product.description}
+            </p>
           </div>
         </div>
       </main>
