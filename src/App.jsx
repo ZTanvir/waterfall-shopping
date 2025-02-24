@@ -5,6 +5,7 @@ import Shop from "./page/Shop";
 import Contacts from "./page/Contacts";
 import Login from "./page/Login";
 import productService from "./services/products";
+import SingleProduct from "./page/SingleProduct";
 
 function App() {
   const { data, isLoading, isError } = productService.getAll();
@@ -19,6 +20,10 @@ function App() {
         <Route
           path="/shop"
           element={<Shop cardData={{ data, isLoading, isError }} />}
+        />
+        <Route
+          path="/shop/:id"
+          element={<SingleProduct cardData={{ data, isLoading, isError }} />}
         />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/login" element={<Login />} />
