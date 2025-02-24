@@ -13,6 +13,10 @@ const SingleProduct = ({ cardData }) => {
 
   const product = data && data.filter((item) => item.id == id)[0];
 
+  const handleBtn = () => {
+    console.log("Btn clicked", amount, product);
+  };
+
   if (isLoading)
     return (
       <div className={styles.loader__container}>
@@ -38,9 +42,15 @@ const SingleProduct = ({ cardData }) => {
             <p className={styles.singleProduct__descriptions}>
               {product && product.description}
             </p>
+            <p className={styles.singleProduct__price}>
+              <span className={styles.singleProduct__price__title}>
+                Price :
+              </span>
+              {product && `$${product.price}`}
+            </p>
             <div className={styles.singleProduct__action}>
               <Counter amount={amount} setAmount={setAmount} />
-              <Btn text="ADD TO CART" />
+              <Btn text="ADD TO CART" handleBtn={handleBtn} />
             </div>
           </div>
         </div>

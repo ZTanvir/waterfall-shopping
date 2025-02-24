@@ -22,6 +22,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
+
 .singleProduct__img {
   border: 2px solid var(--color-dark-gray);
   height: 500px;
@@ -29,6 +30,7 @@
   width: 100%;
   object-fit: contain;
 }
+
 .singleProduct__details {
   display: flex;
   flex-direction: column;
@@ -38,10 +40,23 @@
 .singleProduct__title {
   font-size: 2.5rem;
 }
+
 .singleProduct__descriptions {
   font-size: 1rem;
   font-weight: 300;
 }
+
+.singleProduct__price {
+  font-size: 1.5rem;
+  color: var(--color-orange);
+  font-weight: 800;
+}
+
+.singleProduct__price__title {
+  color: black;
+  font-weight: 400;
+}
+
 .singleProduct__action {
   display: flex;
   gap: 1rem;
