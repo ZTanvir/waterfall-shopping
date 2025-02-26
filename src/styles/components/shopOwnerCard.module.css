@@ -13,3 +13,9 @@
 .card__info {
   padding: 0.5rem;
 }
+.card__info__fullName {
+  text-transform: capitalize;
+}
+.card__info_bold {
+  font-weight: bold;
+}

@@ -1,7 +1,19 @@
+.loadingContainer {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
 .contacts__page {
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+.contacts__page > main {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .contacts__page > footer {
   margin-top: auto;
