@@ -1,4 +1,5 @@
 import styles from "../styles/components/shopOwnerCard.module.css";
+import { Link } from "react-router";
 // dicebear.com api
 const ShopOwnerCard = ({ userData }) => {
   const fullName = userData.name.firstname + " " + userData.name.lastname;

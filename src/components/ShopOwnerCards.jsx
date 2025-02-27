@@ -2,8 +2,6 @@ import ShopOwnerCard from "./ShopOwnerCard";
 import styles from "../styles/components/shopOwnerCards.module.css";
 
 const ShopOwnerCards = ({ cardsData }) => {
-  console.log("cardsData", cardsData);
-
   return (
     <div className={styles.cards__container}>
       {cardsData &&
