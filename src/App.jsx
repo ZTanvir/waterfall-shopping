@@ -6,6 +6,7 @@ import Contacts from "./page/Contacts";
 import Login from "./page/Login";
 import productService from "./services/products";
 import SingleProduct from "./page/SingleProduct";
+import SingleContact from "./page/SingleContact";
 
 function App() {
   const { data, isLoading, isError } = productService.getAll();
@@ -26,6 +27,7 @@ function App() {
           element={<SingleProduct cardData={{ data, isLoading, isError }} />}
         />
         <Route path="/contacts" element={<Contacts />} />
+        <Route path="/contacts/:id" element={<SingleContact />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </>

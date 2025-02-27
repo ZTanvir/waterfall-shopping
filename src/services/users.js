@@ -11,5 +11,14 @@ const getAllUsers = () => {
     isError: error,
   };
 };
+const getSingleUser = (userId) => {
+  const { data, isLoading, error } = useSWR(`${baseUrl}/${userId}`, fetcher);
 
-export default { getAllUsers };
+  return {
+    data,
+    isLoading,
+    isError: error,
+  };
+};
+
+export default { getAllUsers, getSingleUser };
