@@ -1,0 +1,30 @@
+.singleContact__page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.user__info__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.user__img {
+  max-width: 400px;
+  justify-self: center;
+  border-radius: 1rem;
+}
+.card__info {
+}
+.card__info__fullName {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+.card__info_bold {
+  font-weight: bolder;
+}
+.singleContact__page > footer {
+  margin-top: auto;
+}
