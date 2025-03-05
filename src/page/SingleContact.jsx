@@ -2,15 +2,22 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
 import usersService from "../services/users";
+import Map from "../components/Map";
 import styles from "../styles/page/singleContact.module.css";
 import { useParams } from "react-router";
+
 const SingleContact = ({}) => {
   const { id } = useParams();
   const { data, isLoading, isError } = usersService.getSingleUser(id);
   const fullName = data && data.name.firstname + " " + data.name.lastname;
   console.log("Data", data);
 
-  if (isLoading) return <Loading />;
+  if (isLoading)
+    return (
+      <div className={styles.loadingScreen}>
+        <Loading />
+      </div>
+    );
   return (
     <div className={styles.singleContact__page}>
       <header>

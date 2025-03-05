@@ -1,3 +1,9 @@
+.loadingScreen {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .singleContact__page {
   display: flex;
   flex-direction: column;
