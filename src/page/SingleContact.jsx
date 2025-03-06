@@ -10,7 +10,8 @@ const SingleContact = ({}) => {
   const { id } = useParams();
   const { data, isLoading, isError } = usersService.getSingleUser(id);
   const fullName = data && data.name.firstname + " " + data.name.lastname;
-  console.log("Data", data);
+  const address = data && data.address;
+  console.log(data);
 
   if (isLoading)
     return (
@@ -42,9 +43,13 @@ const SingleContact = ({}) => {
                   <span className={styles.card__info_bold}>Phone: </span>
                   {data.phone}
                 </p>
+                <Map
+                  lat={address.geolocation.lat}
+                  long={address.geolocation.long}
+                  street={address.street}
+                />
               </div>
             </div>
-            <div className={styles.user__address}></div>
           </div>
         </main>
       )}
