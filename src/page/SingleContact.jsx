@@ -43,13 +43,29 @@ const SingleContact = ({}) => {
                   <span className={styles.card__info_bold}>Phone: </span>
                   {data.phone}
                 </p>
-                <Map
-                  lat={address.geolocation.lat}
-                  long={address.geolocation.long}
-                  street={address.street}
-                />
+                <p>
+                  <span className={styles.card__info_bold}>City: </span>
+                  {address.city}
+                </p>
+                <p>
+                  <span className={styles.card__info_bold}>Number: </span>
+                  {address.number}
+                </p>
+                <p>
+                  <span className={styles.card__info_bold}>Street: </span>
+                  {address.street}
+                </p>
+                <p>
+                  <span className={styles.card__info_bold}>Zipcode: </span>
+                  {address.zipcode}
+                </p>
               </div>
             </div>
+            <Map
+              lat={address.geolocation.lat}
+              long={address.geolocation.long}
+              street={address.street}
+            />
           </div>
         </main>
       )}

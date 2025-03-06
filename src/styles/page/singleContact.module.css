@@ -10,12 +10,16 @@
   height: 100%;
 }
 
+.user__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .user__info__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 .user__img {
   max-width: 400px;
