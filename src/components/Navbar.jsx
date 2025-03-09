@@ -3,7 +3,7 @@ import LogoImg from "../assets/images/logo/waterfall-shop-logo.png";
 import Cart from "../assets/images/shopping-bag.png";
 import { NavLink } from "react-router";
 import Btn from "./Btn";
-const Navbar = ({ cartItems = 10 }) => {
+const Navbar = ({ cartSize }) => {
   return (
     <nav>
       <ul className={styles.navbar}>
@@ -55,7 +55,7 @@ const Navbar = ({ cartItems = 10 }) => {
             <li className={styles.others__shoppingCart}>
               <img src={Cart} alt="shopping cart" />{" "}
               <span className={styles.others__shoppingCart__items}>
-                {cartItems}
+                {cartSize}
               </span>
             </li>
             <li>Search</li>

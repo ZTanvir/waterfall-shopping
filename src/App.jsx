@@ -7,8 +7,10 @@ import Login from "./page/Login";
 import productService from "./services/products";
 import SingleProduct from "./page/SingleProduct";
 import SingleContact from "./page/SingleContact";
+import { useState } from "react";
 
 function App() {
+  const [cart, setCart] = useState([]);
   const { data, isLoading, isError } = productService.getAll();
 
   return (
@@ -24,7 +26,13 @@ function App() {
         />
         <Route
           path="/shop/:id"
-          element={<SingleProduct cardData={{ data, isLoading, isError }} />}
+          element={
+            <SingleProduct
+              cardData={{ data, isLoading, isError }}
+              cart={cart}
+              setCart={setCart}
+            />
+          }
         />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/contacts/:id" element={<SingleContact />} />

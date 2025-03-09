@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import Loading from "../components/Loading";
 import Counter from "../components/Counter";
 import Btn from "../components/Btn";
-const SingleProduct = ({ cardData }) => {
+const SingleProduct = ({ cardData, cart, setCart }) => {
   const { id } = useParams();
   const { data, isLoading, isError } = cardData;
   const [amount, setAmount] = useState(1);
@@ -15,11 +15,34 @@ const SingleProduct = ({ cardData }) => {
   const product = data && data.filter((item) => item.id == id)[0];
 
   const handleBtn = () => {
-    console.log("Btn clicked", amount, product);
-  };
-  const handleProductSizeBtn = (e) => {
-    console.log(e.target.textContent);
-    console.log("size");
+    let updateProduct = { ...product };
+    // check does the item is already in cart
+    if (cart.length > 0) {
+      const searchProduct = cart.filter((item) => item.id === updateProduct.id);
+      if (searchProduct.length > 0) {
+        // update product amount in the card which match the search result
+        const updatedCart = cart.map((item) => {
+          if (item.id === updateProduct.id) {
+            item["amount"] = Number(amount) + Number(item["amount"]);
+          }
+          return item;
+        });
+        // add products to cart
+        setCart(updatedCart);
+      } else if (searchProduct.length === 0) {
+        // product not found in cart cause it is a new product
+        // modify product by adding amount with product object
+        updateProduct["amount"] = Number(amount);
+        // add product to cart
+        setCart([...cart, updateProduct]);
+      }
+    } else if (cart.length === 0) {
+      // when no items in cart
+      // modify product by adding amount with product object
+      updateProduct["amount"] = Number(amount);
+      // add product to cart
+      setCart([updateProduct]);
+    }
   };
 
   if (isLoading)
@@ -31,7 +54,7 @@ const SingleProduct = ({ cardData }) => {
   return (
     <div className={styles.singleProductPage}>
       <header>
-        <Navbar />
+        <Navbar cartSize={cart.length} />
       </header>
       <main>
         <div className={styles.singleProduct__wrapper}>
