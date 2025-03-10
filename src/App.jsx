@@ -22,7 +22,7 @@ function App() {
         />
         <Route
           path="/shop"
-          element={<Shop cardData={{ data, isLoading, isError }} />}
+          element={<Shop cardData={{ data, isLoading, isError }} cart={cart} />}
         />
         <Route
           path="/shop/:id"

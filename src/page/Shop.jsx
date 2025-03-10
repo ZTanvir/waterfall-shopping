@@ -5,10 +5,9 @@ import ProductCards from "../components/ProductCards";
 import ProductCategories from "../components/ProductCategories";
 import SortFilter from "../components/SortFilter";
 import SearchFilter from "../components/SearchFilter";
-import Counter from "../components/Counter";
 import { useEffect, useState } from "react";
 
-const Shop = ({ cardData }) => {
+const Shop = ({ cardData, cart }) => {
   const [products, setProducts] = useState(null);
   const [isCategoryEnable, setCategoryEnable] = useState(false);
   const [searchText, setSearchText] = useState("");
@@ -27,7 +26,7 @@ const Shop = ({ cardData }) => {
   return (
     <div className={styles.shopPage}>
       <header>
-        <Navbar />
+        <Navbar cartSize={cart.length} />
       </header>
       <main>
         <aside>
