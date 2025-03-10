@@ -2,11 +2,11 @@ import { Routes, Route } from "react-router";
 import "./App.css";
 import Home from "./page/Home";
 import Shop from "./page/Shop";
+import SingleProduct from "./page/SingleProduct";
 import Contacts from "./page/Contacts";
+import SingleContact from "./page/SingleContact";
 import Login from "./page/Login";
 import productService from "./services/products";
-import SingleProduct from "./page/SingleProduct";
-import SingleContact from "./page/SingleContact";
 import { useState } from "react";
 
 function App() {
@@ -34,8 +34,8 @@ function App() {
             />
           }
         />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/contacts/:id" element={<SingleContact />} />
+        <Route path="/contacts" element={<Contacts cart={cart} />} />
+        <Route path="/contacts/:id" element={<SingleContact cart={cart} />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </>

@@ -6,12 +6,11 @@ import Map from "../components/Map";
 import styles from "../styles/page/singleContact.module.css";
 import { useParams } from "react-router";
 
-const SingleContact = ({}) => {
+const SingleContact = ({ cart }) => {
   const { id } = useParams();
   const { data, isLoading, isError } = usersService.getSingleUser(id);
   const fullName = data && data.name.firstname + " " + data.name.lastname;
   const address = data && data.address;
-  console.log(data);
 
   if (isLoading)
     return (
@@ -22,7 +21,7 @@ const SingleContact = ({}) => {
   return (
     <div className={styles.singleContact__page}>
       <header>
-        <Navbar />
+        <Navbar cartSize={cart.length} />
       </header>
       {data && (
         <main>
