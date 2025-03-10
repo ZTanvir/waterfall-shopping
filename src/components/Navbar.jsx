@@ -3,7 +3,9 @@ import LogoImg from "../assets/images/logo/waterfall-shop-logo.png";
 import Cart from "../assets/images/shopping-bag.png";
 import { NavLink } from "react-router";
 import Btn from "./Btn";
-const Navbar = ({ cartSize }) => {
+const Navbar = ({ cart }) => {
+  const cartSize = cart.reduce((acc, cur) => acc + cur.amount, 0);
+
   return (
     <nav>
       <ul className={styles.navbar}>

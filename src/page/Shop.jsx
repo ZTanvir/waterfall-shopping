@@ -26,7 +26,7 @@ const Shop = ({ cardData, cart }) => {
   return (
     <div className={styles.shopPage}>
       <header>
-        <Navbar cartSize={cart.length} />
+        <Navbar cart={cart} />
       </header>
       <main>
         <aside>

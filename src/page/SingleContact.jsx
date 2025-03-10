@@ -21,7 +21,7 @@ const SingleContact = ({ cart }) => {
   return (
     <div className={styles.singleContact__page}>
       <header>
-        <Navbar cartSize={cart.length} />
+        <Navbar cart={cart} />
       </header>
       {data && (
         <main>

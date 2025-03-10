@@ -16,7 +16,7 @@ const Contacts = ({ cart }) => {
   return (
     <div className={styles.contacts__page}>
       <header>
-        <Navbar cartSize={cart.length} />
+        <Navbar cart={cart} />
       </header>
       <main>{data && <ShopOwnerCards cardsData={data} />}</main>
       <Footer />

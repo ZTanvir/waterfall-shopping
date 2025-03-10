@@ -54,7 +54,7 @@ const SingleProduct = ({ cardData, cart, setCart }) => {
   return (
     <div className={styles.singleProductPage}>
       <header>
-        <Navbar cartSize={cart.length} />
+        <Navbar cart={cart} />
       </header>
       <main>
         <div className={styles.singleProduct__wrapper}>

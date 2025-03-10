@@ -15,7 +15,7 @@ const Home = ({ cardData, cart }) => {
   return (
     <div className={styles.homepage}>
       <header>
-        <Navbar cartSize={cart.length} />
+        <Navbar cart={cart} />
       </header>
       <main>
         <section className={styles.about}>
