@@ -6,7 +6,7 @@ import { Link } from "react-router";
 import styles from "../styles/page/home.module.css";
 import helperFunction from "../utils/helperFunction";
 
-const Home = ({ cardData }) => {
+const Home = ({ cardData, cart }) => {
   const { data, isLoading, isError } = cardData;
 
   // Get a single product from all the products
@@ -15,7 +15,7 @@ const Home = ({ cardData }) => {
   return (
     <div className={styles.homepage}>
       <header>
-        <Navbar />
+        <Navbar cartSize={cart.length} />
       </header>
       <main>
         <section className={styles.about}>

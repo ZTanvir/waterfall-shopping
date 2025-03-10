@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home cardData={{ data, isLoading, isError }} />}
+          element={<Home cardData={{ data, isLoading, isError }} cart={cart} />}
         />
         <Route
           path="/shop"
