@@ -22,6 +22,7 @@ function App() {
           element={
             <Home
               cardData={{ data, isLoading, isError }}
+              setCart={setCart}
               cart={cart}
               toggleCart={toggleCart}
               setToggleCart={setToggleCart}

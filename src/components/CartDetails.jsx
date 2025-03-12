@@ -2,13 +2,20 @@ import Btn from "./Btn";
 import styles from "../styles/components/cartWrapper.module.css";
 import deleteIcon from "../assets/images/delete-button.png";
 
-const CartDetails = ({ cart, toggleCart, setToggleCart }) => {
+const CartDetails = ({ cart, setCart, toggleCart, setToggleCart }) => {
   // Sum of all product price
   const total = cart.reduce(
     (accumulator, currentValue) => accumulator + currentValue.price,
     0
   );
-
+  // Remove product from cart
+  const handleRemoveProduct = (e) => {
+    console.log(e.currentTarget.dataset.id);
+    const itemId = Number(e.currentTarget.dataset.id);
+    const filterProduct = cart.filter((product) => product.id !== itemId);
+    console.log(filterProduct);
+    setCart(filterProduct);
+  };
   const handleCheckOutBtn = (e) => {};
   // Hide slide window
   const handleCartToggle = (e) => {
@@ -47,6 +54,8 @@ const CartDetails = ({ cart, toggleCart, setToggleCart }) => {
                   </p>
                 </div>
                 <div
+                  onClick={handleRemoveProduct}
+                  data-id={item.id}
                   title="Remove product"
                   className={styles.removeProductIcon}
                 >

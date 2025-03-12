@@ -7,7 +7,7 @@ import { Link } from "react-router";
 import styles from "../styles/page/home.module.css";
 import helperFunction from "../utils/helperFunction";
 
-const Home = ({ cardData, cart, toggleCart, setToggleCart }) => {
+const Home = ({ cardData, cart, setCart, toggleCart, setToggleCart }) => {
   const { data, isLoading, isError } = cardData;
 
   // Get a single product from all the products
@@ -43,6 +43,7 @@ const Home = ({ cardData, cart, toggleCart, setToggleCart }) => {
       </main>
       <CartDetails
         cart={cart}
+        setCart={setCart}
         toggleCart={toggleCart}
         setToggleCart={setToggleCart}
       />
