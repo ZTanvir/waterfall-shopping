@@ -22,8 +22,8 @@ function App() {
           element={
             <Home
               cardData={{ data, isLoading, isError }}
-              setCart={setCart}
               cart={cart}
+              setCart={setCart}
               toggleCart={toggleCart}
               setToggleCart={setToggleCart}
             />
@@ -34,8 +34,8 @@ function App() {
           element={
             <Shop
               cardData={{ data, isLoading, isError }}
-              setCart={setCart}
               cart={cart}
+              setCart={setCart}
               toggleCart={toggleCart}
               setToggleCart={setToggleCart}
             />
@@ -48,6 +48,8 @@ function App() {
               cardData={{ data, isLoading, isError }}
               cart={cart}
               setCart={setCart}
+              toggleCart={toggleCart}
+              setToggleCart={setToggleCart}
             />
           }
         />

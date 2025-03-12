@@ -6,8 +6,15 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
 import Counter from "../components/Counter";
+import CartDetails from "../components/CartDetails";
 import Btn from "../components/Btn";
-const SingleProduct = ({ cardData, cart, setCart }) => {
+const SingleProduct = ({
+  cardData,
+  cart,
+  setCart,
+  toggleCart,
+  setToggleCart,
+}) => {
   const { id } = useParams();
   const { data, isLoading, isError } = cardData;
   const [amount, setAmount] = useState(1);
@@ -54,7 +61,7 @@ const SingleProduct = ({ cardData, cart, setCart }) => {
   return (
     <div className={styles.singleProductPage}>
       <header>
-        <Navbar cart={cart} />
+        <Navbar cart={cart} setToggleCart={setToggleCart} />
       </header>
       <main>
         <div className={styles.singleProduct__wrapper}>
@@ -83,6 +90,12 @@ const SingleProduct = ({ cardData, cart, setCart }) => {
           </div>
         </div>
       </main>
+      <CartDetails
+        cart={cart}
+        setCart={setCart}
+        toggleCart={toggleCart}
+        setToggleCart={setToggleCart}
+      />
       <Footer />
     </div>
   );
