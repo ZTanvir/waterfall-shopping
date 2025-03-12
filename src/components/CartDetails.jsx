@@ -1,11 +1,72 @@
 import Btn from "./Btn";
-const CartDetails = ({ cart }) => {
+import styles from "../styles/components/cartWrapper.module.css";
+import deleteIcon from "../assets/images/delete-button.png";
+
+const CartDetails = ({ cart, toggleCart, setToggleCart }) => {
+  // Sum of all product price
+  const total = cart.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.price,
+    0
+  );
+
   const handleCheckOutBtn = (e) => {};
+  // Hide slide window
+  const handleCartToggle = (e) => {
+    setToggleCart(false);
+  };
+
+  const showOrHideCart = toggleCart ? styles.showCart : styles.hideCart;
+
   return (
-    <div>
-      <h2>Cart</h2>
-      <div></div>
-      <Btn text="CHECKOUT" handleBtn={handleCheckOutBtn} />
+    <div className={`${styles.cartContainer} ${showOrHideCart}`}>
+      <h2 className={styles.cartTitle}>Cart</h2>
+      <span
+        title="Close"
+        className={styles.hideCartIcon}
+        onClick={handleCartToggle}
+      >
+        <img src={deleteIcon} alt="delete icon" />
+      </span>
+      {cart.length > 0 ? (
+        <>
+          <div className={styles.productsContainer}>
+            {cart.map((item) => (
+              <section className={styles.productContainer} key={item.id}>
+                <div className={styles.productImgAmount}>
+                  <img
+                    className={styles.productImg}
+                    src={item.image}
+                    alt={item.description}
+                  />
+                  <span className={styles.productAmount}>{item.amount}</span>
+                </div>
+                <div className={styles.productTitlePrice}>
+                  <p className={styles.productTitle}>{item.title}</p>
+                  <p className={styles.productPrice}>
+                    {item.amount} × ${item.price}
+                  </p>
+                </div>
+                <div
+                  title="Remove product"
+                  className={styles.removeProductIcon}
+                >
+                  <img src={deleteIcon} alt="delete icon" />
+                </div>
+              </section>
+            ))}
+          </div>
+          <div className={styles.totalPriceContainer}>
+            <span>Subtotal:</span>
+            <span className={styles.totalPrice}>${total}</span>
+          </div>
+          <Btn text="CHECKOUT" handleBtn={handleCheckOutBtn} />
+        </>
+      ) : (
+        <>
+          <p>No items in the cart yet.</p>
+          <p>Please add items from the shop page.</p>
+        </>
+      )}
     </div>
   );
 };

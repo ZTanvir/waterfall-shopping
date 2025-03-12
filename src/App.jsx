@@ -11,6 +11,7 @@ import { useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [toggleCart, setToggleCart] = useState(false);
   const { data, isLoading, isError } = productService.getAll();
 
   return (
@@ -18,7 +19,14 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home cardData={{ data, isLoading, isError }} cart={cart} />}
+          element={
+            <Home
+              cardData={{ data, isLoading, isError }}
+              cart={cart}
+              toggleCart={toggleCart}
+              setToggleCart={setToggleCart}
+            />
+          }
         />
         <Route
           path="/shop"

@@ -2,11 +2,12 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Btn from "../components/Btn";
 import ProductCard from "../components/ProductCard";
+import CartDetails from "../components/CartDetails";
 import { Link } from "react-router";
 import styles from "../styles/page/home.module.css";
 import helperFunction from "../utils/helperFunction";
 
-const Home = ({ cardData, cart }) => {
+const Home = ({ cardData, cart, toggleCart, setToggleCart }) => {
   const { data, isLoading, isError } = cardData;
 
   // Get a single product from all the products
@@ -15,7 +16,7 @@ const Home = ({ cardData, cart }) => {
   return (
     <div className={styles.homepage}>
       <header>
-        <Navbar cart={cart} />
+        <Navbar cart={cart} setToggleCart={setToggleCart} />
       </header>
       <main>
         <section className={styles.about}>
@@ -40,6 +41,12 @@ const Home = ({ cardData, cart }) => {
           />
         </div>
       </main>
+      <CartDetails
+        cart={cart}
+        toggleCart={toggleCart}
+        setToggleCart={setToggleCart}
+      />
+
       <Footer />
     </div>
   );

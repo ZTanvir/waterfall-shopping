@@ -31,6 +31,9 @@
   display: flex;
   position: relative;
 }
+.others__shoppingCart {
+  cursor: pointer;
+}
 .others__shoppingCart__items {
   border: 1px solid;
   width: 30px;
