@@ -41,13 +41,6 @@ const Home = ({ cardData, cart, setCart, toggleCart, setToggleCart }) => {
           />
         </div>
       </main>
-      <CartDetails
-        cart={cart}
-        setCart={setCart}
-        toggleCart={toggleCart}
-        setToggleCart={setToggleCart}
-      />
-
       <Footer />
     </div>
   );
