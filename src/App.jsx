@@ -31,7 +31,15 @@ function App() {
         />
         <Route
           path="/shop"
-          element={<Shop cardData={{ data, isLoading, isError }} cart={cart} />}
+          element={
+            <Shop
+              cardData={{ data, isLoading, isError }}
+              setCart={setCart}
+              cart={cart}
+              toggleCart={toggleCart}
+              setToggleCart={setToggleCart}
+            />
+          }
         />
         <Route
           path="/shop/:id"

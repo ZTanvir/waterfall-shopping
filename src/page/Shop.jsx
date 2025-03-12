@@ -5,9 +5,10 @@ import ProductCards from "../components/ProductCards";
 import ProductCategories from "../components/ProductCategories";
 import SortFilter from "../components/SortFilter";
 import SearchFilter from "../components/SearchFilter";
+import CartDetails from "../components/CartDetails";
 import { useEffect, useState } from "react";
 
-const Shop = ({ cardData, cart }) => {
+const Shop = ({ cardData, cart, setCart, toggleCart, setToggleCart }) => {
   const [products, setProducts] = useState(null);
   const [isCategoryEnable, setCategoryEnable] = useState(false);
   const [searchText, setSearchText] = useState("");
@@ -26,7 +27,7 @@ const Shop = ({ cardData, cart }) => {
   return (
     <div className={styles.shopPage}>
       <header>
-        <Navbar cart={cart} />
+        <Navbar cart={cart} setToggleCart={setToggleCart} />
       </header>
       <main>
         <aside>
@@ -57,6 +58,12 @@ const Shop = ({ cardData, cart }) => {
           />
         </div>
       </main>
+      <CartDetails
+        cart={cart}
+        setCart={setCart}
+        toggleCart={toggleCart}
+        setToggleCart={setToggleCart}
+      />
       <Footer />
     </div>
   );

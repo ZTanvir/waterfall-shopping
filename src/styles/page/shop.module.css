@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 .shopPage > main {
   max-width: 1400px;
