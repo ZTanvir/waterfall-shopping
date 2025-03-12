@@ -64,7 +64,17 @@ function App() {
             />
           }
         />
-        <Route path="/contacts/:id" element={<SingleContact cart={cart} />} />
+        <Route
+          path="/contacts/:id"
+          element={
+            <SingleContact
+              cart={cart}
+              setCart={setCart}
+              toggleCart={toggleCart}
+              setToggleCart={setToggleCart}
+            />
+          }
+        />
         <Route path="/login" element={<Login />} />
       </Routes>
     </>

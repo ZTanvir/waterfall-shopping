@@ -3,10 +3,11 @@ import Footer from "../components/Footer";
 import Loading from "../components/Loading";
 import usersService from "../services/users";
 import Map from "../components/Map";
+import CartDetails from "../components/CartDetails";
 import styles from "../styles/page/singleContact.module.css";
 import { useParams } from "react-router";
 
-const SingleContact = ({ cart }) => {
+const SingleContact = ({ cart, setCart, toggleCart, setToggleCart }) => {
   const { id } = useParams();
   const { data, isLoading, isError } = usersService.getSingleUser(id);
   const fullName = data && data.name.firstname + " " + data.name.lastname;
@@ -21,7 +22,7 @@ const SingleContact = ({ cart }) => {
   return (
     <div className={styles.singleContact__page}>
       <header>
-        <Navbar cart={cart} />
+        <Navbar cart={cart} setToggleCart={setToggleCart} />
       </header>
       {data && (
         <main>
@@ -68,6 +69,12 @@ const SingleContact = ({ cart }) => {
           </div>
         </main>
       )}
+      <CartDetails
+        cart={cart}
+        setCart={setCart}
+        toggleCart={toggleCart}
+        setToggleCart={setToggleCart}
+      />
       <Footer />
     </div>
   );
