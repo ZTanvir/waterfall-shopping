@@ -3,8 +3,9 @@ import Footer from "../components/Footer";
 import ShopOwnerCards from "../components/ShopOwnerCards";
 import userService from "../services/users";
 import Loading from "../components/Loading";
+import CartDetails from "../components/CartDetails";
 import styles from "../styles/page/contacts.module.css";
-const Contacts = ({ cart }) => {
+const Contacts = ({ cart, setCart, toggleCart, setToggleCart }) => {
   const { data, isLoading, isError } = userService.getAllUsers();
 
   if (isLoading)
@@ -16,9 +17,15 @@ const Contacts = ({ cart }) => {
   return (
     <div className={styles.contacts__page}>
       <header>
-        <Navbar cart={cart} />
+        <Navbar cart={cart} setToggleCart={setToggleCart} />
       </header>
       <main>{data && <ShopOwnerCards cardsData={data} />}</main>
+      <CartDetails
+        cart={cart}
+        setCart={setCart}
+        toggleCart={toggleCart}
+        setToggleCart={setToggleCart}
+      />
       <Footer />
     </div>
   );
