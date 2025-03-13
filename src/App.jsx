@@ -75,7 +75,17 @@ function App() {
             />
           }
         />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={
+            <Login
+              cart={cart}
+              setCart={setCart}
+              toggleCart={toggleCart}
+              setToggleCart={setToggleCart}
+            />
+          }
+        />
       </Routes>
     </>
   );

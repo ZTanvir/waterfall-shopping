@@ -1,0 +1,58 @@
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.loginSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+.loginFormSection > h1 {
+  margin-bottom: 1rem;
+}
+.loginSection > .loginImage {
+  border-radius: 1rem;
+  min-width: 45%;
+  filter: blur(0.9px);
+}
+.loginFormSection {
+  min-width: 45%;
+  padding: 2rem;
+}
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#loginForm > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+}
+#loginForm > div > label {
+  font-weight: 600;
+}
+#loginForm > div > input {
+  height: 2.4rem;
+  line-height: 1.2;
+  padding: 0.5rem;
+  border: 1px solid rgb(177, 165, 165);
+  border-radius: 3px;
+}
+.forgetPassword {
+  font-size: 14px;
+  text-align: end;
+  color: var(--color-orange);
+}
+#loginForm > button {
+  margin-top: 1.5rem;
+}
+.loginPage > footer {
+  margin-top: auto;
+}
