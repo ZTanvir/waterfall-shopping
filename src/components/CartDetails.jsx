@@ -5,7 +5,8 @@ import deleteIcon from "../assets/images/delete-button.png";
 const CartDetails = ({ cart, setCart, toggleCart, setToggleCart }) => {
   // Sum of all product price
   const total = cart.reduce(
-    (accumulator, currentValue) => accumulator + currentValue.price,
+    (accumulator, currentValue) =>
+      accumulator + currentValue.amount * currentValue.price,
     0
   );
   // Remove product from cart
@@ -66,7 +67,7 @@ const CartDetails = ({ cart, setCart, toggleCart, setToggleCart }) => {
           </div>
           <div className={styles.totalPriceContainer}>
             <span>Subtotal:</span>
-            <span className={styles.totalPrice}>${total}</span>
+            <span className={styles.totalPrice}>${total.toFixed(2)}</span>
           </div>
           <Btn text="CHECKOUT" handleBtn={handleCheckOutBtn} />
         </>
