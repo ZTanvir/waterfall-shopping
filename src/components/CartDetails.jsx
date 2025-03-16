@@ -69,7 +69,9 @@ const CartDetails = ({ cart, setCart, toggleCart, setToggleCart }) => {
             <span>Subtotal:</span>
             <span className={styles.totalPrice}>${total.toFixed(2)}</span>
           </div>
-          <Btn text="CHECKOUT" handleBtn={handleCheckOutBtn} />
+          <a className={styles.checkoutLink} href="/checkout">
+            <Btn text="CHECKOUT" handleBtn={handleCheckOutBtn} />
+          </a>
         </>
       ) : (
         <>
