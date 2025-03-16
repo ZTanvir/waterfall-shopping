@@ -1,0 +1,27 @@
+#checkoutPage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#checkoutPage > footer {
+  margin-top: auto;
+}
+#userInfoForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#userInfoForm input {
+  height: 2.5rem;
+  padding: 0.25rem;
+  line-height: 1.2;
+  border: 1px solid gray;
+  border-radius: 6px;
+  width: 100%;
+}
+
+:is(.userNameFields, .userLocationsFields) {
+  display: flex;
+  gap: 0.5rem;
+}
