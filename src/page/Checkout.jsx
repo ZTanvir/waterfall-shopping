@@ -1,7 +1,14 @@
-const Checkout = () => {
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+const Checkout = ({ cart }) => {
   return (
     <div>
-      <h1>This is a checkout page.</h1>
+      <header>
+        <Navbar cart={cart} />
+      </header>
+      <main></main>
+      <Footer />
     </div>
   );
 };
