@@ -1,4 +1,5 @@
 import Btn from "./Btn";
+import { useNavigate } from "react-router";
 import styles from "../styles/components/cartWrapper.module.css";
 import deleteIcon from "../assets/images/delete-button.png";
 
@@ -17,16 +18,20 @@ const CartDetails = ({ cart, setCart, toggleCart, setToggleCart }) => {
     console.log(filterProduct);
     setCart(filterProduct);
   };
-  const handleCheckOutBtn = (e) => {};
+  // navigate
+  const navigate = useNavigate();
+  const handleCheckOutBtn = (e) => {
+    navigate("/checkout");
+  };
   // Hide slide window
   const handleCartToggle = (e) => {
     setToggleCart(false);
   };
 
-  const showOrHideCart = toggleCart ? styles.showCart : styles.hideCart;
+  const showOrHideCartClass = toggleCart ? styles.showCart : styles.hideCart;
 
   return (
-    <div className={`${styles.cartContainer} ${showOrHideCart}`}>
+    <div className={`${styles.cartContainer} ${showOrHideCartClass}`}>
       <h2 className={styles.cartTitle}>Cart</h2>
       <span
         title="Close"
@@ -69,9 +74,7 @@ const CartDetails = ({ cart, setCart, toggleCart, setToggleCart }) => {
             <span>Subtotal:</span>
             <span className={styles.totalPrice}>${total.toFixed(2)}</span>
           </div>
-          <a className={styles.checkoutLink} href="/checkout">
-            <Btn text="CHECKOUT" handleBtn={handleCheckOutBtn} />
-          </a>
+          <Btn text="CHECKOUT" handleBtn={handleCheckOutBtn} />
         </>
       ) : (
         <>
