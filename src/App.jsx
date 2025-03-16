@@ -6,6 +6,7 @@ import SingleProduct from "./page/SingleProduct";
 import Contacts from "./page/Contacts";
 import SingleContact from "./page/SingleContact";
 import Login from "./page/Login";
+import Checkout from "./page/Checkout";
 import productService from "./services/products";
 import { useState } from "react";
 
@@ -86,6 +87,7 @@ function App() {
             />
           }
         />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </>
   );
