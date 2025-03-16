@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import CartDetails from "../components/CartDetails";
+import CartProducts from "../components/CartProducts";
 import Btn from "../components/Btn";
 import styles from "../styles/page/checkout.module.css";
 
@@ -77,7 +77,9 @@ const Checkout = ({ cart }) => {
             <Btn text="Submit" handleBtn={handleBtn} />
           </form>
         </div>
-        <div></div>
+        <div>
+          <CartProducts cart={cart} />
+        </div>
       </main>
       <Footer />
     </div>
