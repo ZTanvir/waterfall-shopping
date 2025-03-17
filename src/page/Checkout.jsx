@@ -5,7 +5,9 @@ import Btn from "../components/Btn";
 import styles from "../styles/page/checkout.module.css";
 
 const Checkout = ({ cart }) => {
-  const handleBtn = (e) => {};
+  const handleBtn = (e) => {
+    console.log(cart);
+  };
   return (
     <div id={styles.checkoutPage}>
       <header>
