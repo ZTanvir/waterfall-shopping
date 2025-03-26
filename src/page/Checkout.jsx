@@ -3,11 +3,19 @@ import Footer from "../components/Footer";
 import CartProducts from "../components/CartProducts";
 import Btn from "../components/Btn";
 import styles from "../styles/page/checkout.module.css";
+import emailjs from "@emailjs/browser";
 
 const Checkout = ({ cart }) => {
-  const handleBtn = (e) => {
+  const handleBtn = (e) => {};
+  const submitForm = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const formValues = Object.fromEntries(formData);
+    console.log(formValues);
     console.log(cart);
+    const templateParams = {};
   };
+
   return (
     <div id={styles.checkoutPage}>
       <header>
@@ -16,7 +24,7 @@ const Checkout = ({ cart }) => {
       <main>
         <div className={styles.formSectionContainer}>
           <h1 className={styles.formSection__title}>Contact information</h1>
-          <form id={styles.userInfoForm}>
+          <form onSubmit={submitForm} id={styles.userInfoForm}>
             <div>
               <input
                 type="email"
