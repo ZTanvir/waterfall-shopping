@@ -11,9 +11,57 @@ const Checkout = ({ cart }) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formValues = Object.fromEntries(formData);
-    console.log(formValues);
-    console.log(cart);
-    const templateParams = {};
+
+    // Product information that has ordered by the user will send to email
+    const orderList = cart.map((item) => {
+      let itemDetails = {};
+      itemDetails.image_url = item.image;
+      itemDetails.name = item.title;
+      itemDetails.units = item.amount;
+      itemDetails.price = item.price;
+      return itemDetails;
+    });
+
+    // Total price of the ordered products
+    const totalPrice = cart.reduce(
+      (acu, cur) => acu + cur.price * cur.amount,
+      0
+    );
+
+    // Form data that will send to email for shopping address table
+    const emailFormValues = {
+      username: formValues.fname + " " + formValues.lname,
+      order_email: formValues.email,
+      address: formValues.address,
+      apartment: formValues.apartment,
+      city: formValues.city,
+      phone: formValues.phone,
+    };
+    const orderId = Math.floor(Math.random());
+    console.log(orderId);
+
+    const templateParams = {
+      order_id: 14474,
+      orders: orderList,
+      cost: {
+        total: totalPrice.toFixed(2),
+      },
+      emailFormValues,
+      email: "zahirulopel@gmail.com", // order details will send here
+    };
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    emailjs.init(publicKey);
+    // emailjs
+    //   .send(serviceId, "template_product_order", templateParams)
+    //   .then((result) => {
+    //     console.log("Success", result);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Failed...", error);
+    //   });
+    // e.target.reset();
   };
 
   return (
