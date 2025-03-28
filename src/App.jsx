@@ -87,7 +87,10 @@ function App() {
             />
           }
         />
-        <Route path="/checkout" element={<Checkout cart={cart} />} />
+        <Route
+          path="/checkout"
+          element={<Checkout cart={cart} setCart={setCart} />}
+        />
       </Routes>
     </>
   );

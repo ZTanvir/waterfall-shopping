@@ -4,9 +4,17 @@ import CartProducts from "../components/CartProducts";
 import Btn from "../components/Btn";
 import styles from "../styles/page/checkout.module.css";
 import emailjs from "@emailjs/browser";
+import checkedIcon from "../assets/images/checked.png";
+import crossImg from "../assets/images/cross.png";
+import { useNavigate } from "react-router";
+import { useRef, useState } from "react";
 
-const Checkout = ({ cart }) => {
+const Checkout = ({ cart, setCart }) => {
+  const [isOrderConfirm, setIsOrderConfirm] = useState(false);
+  const modalRef = useRef(null);
+  let navigate = useNavigate();
   const handleBtn = (e) => {};
+
   const submitForm = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -29,7 +37,7 @@ const Checkout = ({ cart }) => {
     );
 
     // Form data that will send to email for shopping address table
-    const emailFormValues = {
+    const userinfo = {
       username: formValues.fname + " " + formValues.lname,
       order_email: formValues.email,
       address: formValues.address,
@@ -37,31 +45,46 @@ const Checkout = ({ cart }) => {
       city: formValues.city,
       phone: formValues.phone,
     };
-    const orderId = Math.floor(Math.random());
-    console.log(orderId);
+    // generate number between 1 to 10000
+    const orderId = Math.floor(Math.random() * 10000) + 1;
 
     const templateParams = {
-      order_id: 14474,
+      order_id: orderId,
       orders: orderList,
       cost: {
         total: totalPrice.toFixed(2),
       },
-      emailFormValues,
+      userinfo,
       email: "zahirulopel@gmail.com", // order details will send here
     };
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
     emailjs.init(publicKey);
-    // emailjs
-    //   .send(serviceId, "template_product_order", templateParams)
-    //   .then((result) => {
-    //     console.log("Success", result);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Failed...", error);
-    //   });
-    // e.target.reset();
+
+    emailjs
+      .send(serviceId, "template_product_order", templateParams)
+      .then((result) => {
+        setIsOrderConfirm(true);
+        modalRef.current.showModal();
+        setTimeout(() => {
+          // Rest cart
+          setCart([]);
+          // reset the form
+          e.target.reset();
+          // send back to shop page
+          navigate("/shop");
+        }, 4000);
+      })
+      .catch((error) => {
+        console.error("Failed...", error);
+        setIsOrderConfirm(false);
+        modalRef.current.showModal();
+        setTimeout(() => {
+          // close the modal
+          modalRef.current.close();
+        }, 4000);
+      });
   };
 
   return (
@@ -139,6 +162,29 @@ const Checkout = ({ cart }) => {
           <CartProducts cart={cart} />
         </div>
       </main>
+      <dialog
+        ref={modalRef}
+        className={styles.checkoutConfirmationMsg}
+        close="true"
+      >
+        {isOrderConfirm ? (
+          <div>
+            <img
+              src={checkedIcon}
+              alt="White checkmark with green background"
+            />
+            <h3>We've received your order</h3>
+            <p>Thank you for shopping at Waterfall Shop</p>
+          </div>
+        ) : (
+          <div>
+            <img src={crossImg} alt="Black cross with red background" />
+            <h3>Something went wrong.</h3>
+            <p>We couldn't confirm your order. </p>
+            <p>Please contract to the shop owner.</p>
+          </div>
+        )}
+      </dialog>
       <Footer />
     </div>
   );

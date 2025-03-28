@@ -32,3 +32,25 @@
   display: flex;
   gap: 0.5rem;
 }
+
+.checkoutConfirmationMsg {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+.checkoutConfirmationMsg > div {
+  display: grid;
+  gap: 0.5rem;
+  align-items: start;
+}
+.checkoutConfirmationMsg > div > img {
+  justify-self: center;
+}
+.checkoutConfirmationMsg::backdrop {
+  background-color: #fcc79f;
+  opacity: 0.3;
+}
