@@ -13,7 +13,6 @@ const Checkout = ({ cart, setCart }) => {
   const [isOrderConfirm, setIsOrderConfirm] = useState(false);
   const modalRef = useRef(null);
   let navigate = useNavigate();
-  const handleBtn = (e) => {};
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -155,7 +154,7 @@ const Checkout = ({ cart, setCart }) => {
                 required
               />
             </div>
-            <Btn text="Submit" handleBtn={handleBtn} />
+            <Btn text="Submit" />
           </form>
         </div>
         <div>
