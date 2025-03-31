@@ -1,7 +1,6 @@
 import { useParams } from "react-router";
 import { useState } from "react";
 import styles from "../styles/page/singleProduct.module.css";
-import ProductSize from "../components/ProductSize";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";

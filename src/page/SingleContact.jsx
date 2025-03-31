@@ -6,8 +6,11 @@ import Map from "../components/Map";
 import CartDetails from "../components/CartDetails";
 import styles from "../styles/page/singleContact.module.css";
 import { useParams } from "react-router";
+import { useState } from "react";
+useState;
 
-const SingleContact = ({ cart, setCart, toggleCart, setToggleCart }) => {
+const SingleContact = ({ cart, setCart }) => {
+  const [toggleCart, setToggleCart] = useState(false);
   const { id } = useParams();
   const { data, isLoading, isError } = usersService.getSingleUser(id);
   const fullName = data && data.name.firstname + " " + data.name.lastname;
