@@ -3,8 +3,11 @@ import Footer from "../components/Footer";
 import loginImg from "../assets/images/login-page.jpg";
 import Btn from "../components/Btn";
 import styles from "../styles/page/login.module.css";
+import { useState } from "react";
 
-const Login = ({ cart, setCart, toggleCart, setToggleCart }) => {
+const Login = ({ cart, setCart }) => {
+  const [toggleCart, setToggleCart] = useState(false);
+
   return (
     <div className={styles.loginPage}>
       <header>

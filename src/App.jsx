@@ -12,7 +12,6 @@ import { useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [toggleCart, setToggleCart] = useState(false);
   const { data, isLoading, isError } = productService.getAll();
 
   return (
@@ -25,8 +24,6 @@ function App() {
               cardData={{ data, isLoading, isError }}
               cart={cart}
               setCart={setCart}
-              toggleCart={toggleCart}
-              setToggleCart={setToggleCart}
             />
           }
         />
@@ -37,8 +34,6 @@ function App() {
               cardData={{ data, isLoading, isError }}
               cart={cart}
               setCart={setCart}
-              toggleCart={toggleCart}
-              setToggleCart={setToggleCart}
             />
           }
         />
@@ -49,43 +44,20 @@ function App() {
               cardData={{ data, isLoading, isError }}
               cart={cart}
               setCart={setCart}
-              toggleCart={toggleCart}
-              setToggleCart={setToggleCart}
             />
           }
         />
         <Route
           path="/contacts"
-          element={
-            <Contacts
-              cart={cart}
-              setCart={setCart}
-              toggleCart={toggleCart}
-              setToggleCart={setToggleCart}
-            />
-          }
+          element={<Contacts cart={cart} setCart={setCart} />}
         />
         <Route
           path="/contacts/:id"
-          element={
-            <SingleContact
-              cart={cart}
-              setCart={setCart}
-              toggleCart={toggleCart}
-              setToggleCart={setToggleCart}
-            />
-          }
+          element={<SingleContact cart={cart} setCart={setCart} />}
         />
         <Route
           path="/login"
-          element={
-            <Login
-              cart={cart}
-              setCart={setCart}
-              toggleCart={toggleCart}
-              setToggleCart={setToggleCart}
-            />
-          }
+          element={<Login cart={cart} setCart={setCart} />}
         />
         <Route
           path="/checkout"

@@ -6,9 +6,11 @@ import CartDetails from "../components/CartDetails";
 import { Link } from "react-router";
 import styles from "../styles/page/home.module.css";
 import helperFunction from "../utils/helperFunction";
+import { useState } from "react";
 
-const Home = ({ cardData, cart, setCart, toggleCart, setToggleCart }) => {
+const Home = ({ cardData, cart, setCart }) => {
   const { data, isLoading, isError } = cardData;
+  const [toggleCart, setToggleCart] = useState(false);
 
   // Get a single product from all the products
   const getSingleCardData = helperFunction.getRandomItems(data);

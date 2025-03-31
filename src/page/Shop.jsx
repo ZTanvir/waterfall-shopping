@@ -8,10 +8,12 @@ import SearchFilter from "../components/SearchFilter";
 import CartDetails from "../components/CartDetails";
 import { useEffect, useState } from "react";
 
-const Shop = ({ cardData, cart, setCart, toggleCart, setToggleCart }) => {
+const Shop = ({ cardData, cart, setCart }) => {
   const [products, setProducts] = useState(null);
   const [isCategoryEnable, setCategoryEnable] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const [toggleCart, setToggleCart] = useState(false);
+
   const { data, isLoading, isError } = cardData;
 
   // use effect dependency variable

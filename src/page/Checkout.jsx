@@ -11,6 +11,7 @@ import { useRef, useState } from "react";
 
 const Checkout = ({ cart, setCart }) => {
   const [isOrderConfirm, setIsOrderConfirm] = useState(false);
+
   const modalRef = useRef(null);
   let navigate = useNavigate();
 
@@ -85,11 +86,12 @@ const Checkout = ({ cart, setCart }) => {
         }, 4000);
       });
   };
+  const handleNavbarCartBtn = () => {};
 
   return (
     <div id={styles.checkoutPage}>
       <header>
-        <Navbar cart={cart} />
+        <Navbar cart={cart} setToggleCart={handleNavbarCartBtn} />
       </header>
       <main>
         <div className={styles.formSectionContainer}>

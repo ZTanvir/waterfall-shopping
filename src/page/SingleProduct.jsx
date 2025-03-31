@@ -8,16 +8,12 @@ import Loading from "../components/Loading";
 import Counter from "../components/Counter";
 import CartDetails from "../components/CartDetails";
 import Btn from "../components/Btn";
-const SingleProduct = ({
-  cardData,
-  cart,
-  setCart,
-  toggleCart,
-  setToggleCart,
-}) => {
+
+const SingleProduct = ({ cardData, cart, setCart }) => {
   const { id } = useParams();
   const { data, isLoading, isError } = cardData;
   const [amount, setAmount] = useState(1);
+  const [toggleCart, setToggleCart] = useState(false);
 
   const product = data && data.filter((item) => item.id == id)[0];
 

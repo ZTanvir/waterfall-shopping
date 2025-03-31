@@ -5,8 +5,11 @@ import userService from "../services/users";
 import Loading from "../components/Loading";
 import CartDetails from "../components/CartDetails";
 import styles from "../styles/page/contacts.module.css";
-const Contacts = ({ cart, setCart, toggleCart, setToggleCart }) => {
+import { useState } from "react";
+
+const Contacts = ({ cart, setCart }) => {
   const { data, isLoading, isError } = userService.getAllUsers();
+  const [toggleCart, setToggleCart] = useState(false);
 
   if (isLoading)
     return (
