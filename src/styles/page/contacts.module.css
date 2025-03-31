@@ -9,7 +9,7 @@
   flex-direction: column;
   height: 100%;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .contacts__page > main {
 }
