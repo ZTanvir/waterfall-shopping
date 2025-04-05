@@ -7,7 +7,6 @@ import CartDetails from "../components/CartDetails";
 import styles from "../styles/page/singleContact.module.css";
 import { useParams } from "react-router";
 import { useState } from "react";
-useState;
 
 const SingleContact = ({ cart, setCart }) => {
   const [toggleCart, setToggleCart] = useState(false);
