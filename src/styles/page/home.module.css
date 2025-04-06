@@ -32,6 +32,7 @@
 .underline {
   position: relative;
   display: inline-block;
+  padding: 0rem 0.5rem;
 }
 .underline::after {
   content: "";
