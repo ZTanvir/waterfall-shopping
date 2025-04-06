@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100%;
   position: relative;
-  overflow: hidden;
+  overflow-x: auto;
 }
 .homepage > main {
   max-width: 1400px;
@@ -54,4 +54,35 @@
 
 footer {
   margin-top: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .homepage > main {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 2rem;
+    gap: 2rem;
+    border: none;
+    margin-top: 0rem;
+  }
+  .title {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  .subtitle {
+    text-align: center;
+  }
+  .about {
+    flex-basis: unset;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .singleDemoProduct {
+    flex-basis: unset;
+  }
+  .shopPageLink {
+    align-self: center;
+  }
 }
