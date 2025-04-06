@@ -1,3 +1,6 @@
+.navbar {
+  padding: 0.5rem;
+}
 .navItems li {
   list-style: none;
 }
@@ -16,6 +19,9 @@
   gap: 1.6rem;
   flex-wrap: wrap;
   align-items: center;
+}
+.others {
+  gap: 2rem;
 }
 
 .logo__Img {
