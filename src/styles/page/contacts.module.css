@@ -12,6 +12,7 @@
   overflow-x: hidden;
 }
 .contacts__page > main {
+  padding: 1rem;
 }
 .contacts__page > footer {
   margin-top: auto;
