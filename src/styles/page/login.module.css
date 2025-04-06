@@ -8,7 +8,8 @@
   align-items: center;
   gap: 1rem;
   border-radius: 1rem;
-  overflow: hidden;
+  padding: 1rem;
+  overflow-x: auto;
   max-width: 1200px;
   margin: 0 auto;
   height: 100%;
@@ -17,6 +18,7 @@
   margin-bottom: 1rem;
 }
 .loginSection > .loginImage {
+  height: 500px;
   border-radius: 1rem;
   min-width: 45%;
   filter: blur(0.9px);
@@ -55,4 +57,9 @@
 }
 .loginPage > footer {
   margin-top: auto;
+}
+@media screen and (max-width: 600px) {
+  .loginSection {
+    flex-direction: column-reverse;
+  }
 }
