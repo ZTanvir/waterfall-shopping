@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100%;
   position: relative;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 .homepage > main {
   max-width: 1400px;
