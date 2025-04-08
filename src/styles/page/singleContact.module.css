@@ -29,6 +29,9 @@
   border-radius: 1rem;
 }
 .card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .card__info__fullName {
   font-size: 2rem;
