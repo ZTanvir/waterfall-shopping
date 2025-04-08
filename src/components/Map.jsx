@@ -10,7 +10,12 @@ const Map = ({ lat, long, street }) => {
         center={[lat, long]}
         zoom={13}
         scrollWheelZoom={true}
-        style={{ width: "100%", height: "300px", borderRadius: "16px" }}
+        style={{
+          width: "100%",
+          height: "300px",
+          borderRadius: "16px",
+          zIndex: "0",
+        }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
