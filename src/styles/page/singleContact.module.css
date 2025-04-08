@@ -40,3 +40,12 @@
 .singleContact__page > footer {
   margin-top: auto;
 }
+@media screen and (max-width: 600px) {
+  .user__container {
+    padding: 1rem;
+  }
+  .user__info__container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
