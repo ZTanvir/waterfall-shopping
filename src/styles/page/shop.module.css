@@ -7,17 +7,41 @@
 }
 .shopPage > main {
   max-width: 1400px;
+  padding: 1rem;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 5%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
 }
 .shopPage > main > aside {
-  flex-basis: 25%;
+  grid-column: 1/1;
 }
 .shopPage > main > div {
-  flex-basis: 70%;
+  grid-column: 2/ -1;
 }
 .shopPage > footer {
   margin-top: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .shopPage > main {
+    grid-template-columns: 1fr;
+  }
+  .shopPage > main > aside {
+    grid-column: initial;
+  }
+  .shopPage > main > div {
+    grid-column: initial;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .shopPage > main {
+    grid-template-columns: 1fr;
+  }
+  .shopPage > main > aside {
+    grid-column: initial;
+  }
+  .shopPage > main > div {
+    grid-column: initial;
+  }
 }
