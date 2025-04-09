@@ -9,9 +9,11 @@
   gap: 1rem;
   height: 100%;
 }
-
 #checkoutPage > footer {
   margin-top: auto;
+}
+.formSectionContainer {
+  padding: 0.5rem;
 }
 #userInfoForm {
   display: flex;
@@ -53,4 +55,14 @@
 .checkoutConfirmationMsg::backdrop {
   background-color: #fcc79f;
   opacity: 0.3;
+}
+@media screen and (max-width: 600px) {
+  :is(.userNameFields, .userLocationsFields) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  #checkoutPage > main {
+    height: auto;
+  }
 }

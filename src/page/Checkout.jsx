@@ -1,13 +1,13 @@
+import { useNavigate } from "react-router";
+import { useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CartProducts from "../components/CartProducts";
 import Btn from "../components/Btn";
-import styles from "../styles/page/checkout.module.css";
 import emailjs from "@emailjs/browser";
 import checkedIcon from "../assets/images/checked.png";
 import crossImg from "../assets/images/cross.png";
-import { useNavigate } from "react-router";
-import { useRef, useState } from "react";
+import styles from "../styles/page/checkout.module.css";
 
 const Checkout = ({ cart, setCart }) => {
   const [isOrderConfirm, setIsOrderConfirm] = useState(false);
