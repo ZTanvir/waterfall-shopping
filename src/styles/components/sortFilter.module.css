@@ -6,3 +6,9 @@
 .shopFilter__resultMsg {
   font-size: 1.2rem;
 }
+@media screen and (max-width: 600px) {
+  .shopFilter__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

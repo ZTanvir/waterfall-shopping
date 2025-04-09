@@ -1,5 +1,5 @@
 .selectForm {
-  margin: 10px;
+  margin: 0.5rem;
 }
 .selectField {
   background-color: var(--color-light-gray);
@@ -11,4 +11,17 @@
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   caret-color: var(--color-orange);
+}
+@media screen and (max-width: 600px) {
+  .shopFilter__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .selectForm {
+    margin: 1rem 0rem;
+    width: 100%;
+  }
+  .selectField {
+    width: 100%;
+  }
 }
