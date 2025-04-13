@@ -18,14 +18,16 @@
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem;
 }
 .user__info__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 .user__img {
   max-width: 400px;
-  justify-self: center;
+  justify-self: end;
   border-radius: 1rem;
 }
 .card__info {

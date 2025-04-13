@@ -94,3 +94,11 @@
   width: 20px;
   cursor: pointer;
 }
+@media screen and (max-width: 600px) {
+  .cartContainer {
+    width: 100%;
+  }
+  .hideCart {
+    right: -100%;
+  }
+}
