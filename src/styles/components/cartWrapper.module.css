@@ -9,7 +9,7 @@
   z-index: 400;
   overflow: auto;
   /* Slide window right to left */
-  position: absolute;
+  position: fixed;
   top: 0;
   transition: 1s ease;
 }
