@@ -60,7 +60,10 @@
 }
 @media screen and (max-width: 600px) {
   .loginSection {
-    flex-direction: column-reverse;
+    flex-direction: column;
+  }
+  .loginImage {
+    order: 1;
   }
   .loginFormSection {
     width: 100%;
