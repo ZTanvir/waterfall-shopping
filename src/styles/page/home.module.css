@@ -14,6 +14,7 @@
   flex-wrap: wrap;
   border: 3px solid black;
   gap: 10%;
+  border-radius: 1rem;
 }
 .about {
   flex-basis: 50%;
