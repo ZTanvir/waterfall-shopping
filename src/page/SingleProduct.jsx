@@ -1,11 +1,13 @@
 import { useParams } from "react-router";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styles from "../styles/page/singleProduct.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
 import Counter from "../components/Counter";
 import CartDetails from "../components/CartDetails";
+import CartProducts from "../components/CartProducts";
+import closeIcon from "../assets/images/cross.png";
 import Btn from "../components/Btn";
 
 const SingleProduct = ({ cardData, cart, setCart }) => {
@@ -13,10 +15,29 @@ const SingleProduct = ({ cardData, cart, setCart }) => {
   const { data, isLoading, isError } = cardData;
   const [amount, setAmount] = useState(1);
   const [toggleCart, setToggleCart] = useState(false);
+  const addToCartModalRef = useRef(null);
+
+  const openAddToCartModal = () => addToCartModalRef.current.showModal();
+  const closeAddToCartModal = () => addToCartModalRef.current.close();
+  const handleCloseCartModal = () => {
+    closeAddToCartModal();
+  };
+  // close the modal when click outside the modal content
+  const handleCartModal = (e) => {
+    const dialogDimension = addToCartModalRef.current.getBoundingClientRect();
+    if (
+      e.clientX < dialogDimension.x ||
+      e.clientX > dialogDimension.right ||
+      e.clientY < dialogDimension.y ||
+      e.clientY > dialogDimension.bottom
+    ) {
+      closeAddToCartModal();
+    }
+  };
 
   const product = data && data.filter((item) => item.id == id)[0];
 
-  const handleBtn = () => {
+  const handleAddToCartBtn = () => {
     let updateProduct = { ...product };
     // check does the item is already in cart
     if (cart.length > 0) {
@@ -45,6 +66,8 @@ const SingleProduct = ({ cardData, cart, setCart }) => {
       // add product to cart
       setCart([updateProduct]);
     }
+    // show item has added to cart in modal
+    openAddToCartModal();
   };
 
   if (isLoading)
@@ -77,13 +100,29 @@ const SingleProduct = ({ cardData, cart, setCart }) => {
             </p>
             <div className={styles.singleProduct__action}>
               <Counter amount={amount} setAmount={setAmount} />
-              <Btn text="ADD TO CART" handleBtn={handleBtn} />
+              <Btn text="ADD TO CART" handleBtn={handleAddToCartBtn} />
             </div>
             <p className={styles.singleProduct__descriptions}>
               {product && product.description}
             </p>
           </div>
         </div>
+        <dialog
+          ref={addToCartModalRef}
+          onClick={handleCartModal}
+          className={styles.cartModal}
+        >
+          <div className={styles.cartModalHeader}>
+            <h2 className={styles.cartModalTitle}>You have just added</h2>
+            <button
+              onClick={handleCloseCartModal}
+              className={styles.cartModalCloseBtn}
+            >
+              <img src={closeIcon} alt="Red circle with cross mark on it" />
+            </button>
+          </div>
+          <CartProducts cart={cart} />
+        </dialog>
       </main>
       <CartDetails
         cart={cart}

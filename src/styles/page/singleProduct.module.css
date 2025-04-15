@@ -72,6 +72,39 @@
   margin-top: auto;
 }
 
+.cartModal {
+  border-radius: 1rem;
+  min-width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cartModal::backdrop {
+  background-color: var(--color-orange);
+  opacity: 0.4;
+}
+.cartModalHeader {
+  position: relative;
+}
+.cartModalTitle {
+  font-size: 2rem;
+  text-align: center;
+}
+.cartModalCloseBtn {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.cartModalCloseBtn > img {
+  width: 20px;
+  height: 20px;
+}
+
 @media screen and (max-width: 600px) {
   .singleProductPage > main {
     margin-top: 0rem;
