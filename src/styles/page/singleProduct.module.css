@@ -43,6 +43,7 @@
 
 .singleProduct__title {
   font-size: 2.5rem;
+  margin: 0.25rem;
 }
 
 .singleProduct__descriptions {
@@ -115,6 +116,9 @@
     gap: 1rem;
     padding: 1rem;
   }
+  .cartModal {
+    min-width: 90%;
+  }
   .singleProduct__title {
     font-size: 2rem;
   }
@@ -123,5 +127,9 @@
   }
   .singleProduct__action {
     flex-direction: column;
+  }
+  .cartModalCloseBtn {
+    right: -14px;
+    top: -18px;
   }
 }

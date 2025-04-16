@@ -115,6 +115,7 @@ const SingleProduct = ({ cardData, cart, setCart }) => {
           <div className={styles.cartModalHeader}>
             <h2 className={styles.cartModalTitle}>You have just added</h2>
             <button
+              title="close"
               onClick={handleCloseCartModal}
               className={styles.cartModalCloseBtn}
             >

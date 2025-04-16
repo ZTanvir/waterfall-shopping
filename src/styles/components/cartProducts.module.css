@@ -62,3 +62,27 @@
 .totalPrice {
   color: var(--color-orange);
 }
+@media screen and (max-width: 600px) {
+  .productImgAmount {
+    flex-basis: 40%;
+  }
+  .productTitlePrice {
+    flex-basis: 60%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .productImgAmount {
+    flex-basis: 30%;
+  }
+  .productTitlePrice {
+    flex-basis: 60%;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1400px) {
+  .productImgAmount {
+    flex-basis: 20%;
+  }
+  .productTitlePrice {
+    flex-basis: 80%;
+  }
+}
