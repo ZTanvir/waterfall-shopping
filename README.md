@@ -4,6 +4,8 @@ This project presents a functional online shopping application where users can b
 
 [**View Live Demo**](https://waterfall-shopping.vercel.app/) | [**Browse Source Code**](https://github.com/ZTanvir/waterfall-shopping)
 
+https://github.com/user-attachments/assets/5efa3596-a6ee-4a0e-9c28-28177cc4d928
+
 ## Core functionalities
 
 - Implemented and compared different data patterns, specifically Fetch-then-Render (waterfall) vs. Render-then-Fetch (parallel) to optimize the user experience.
