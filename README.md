@@ -37,9 +37,13 @@ In this project, I explored how data fetching impacts UI perceived performance:
 
 **Fetch-then-Render**: The application waits for all data to arrive before showing the component.In the home page all product has been fetch first.Then the products has pass to shop page.This result smooth ui transition in shop page product list section.
 
+![Fetch then Render](./screenshoot/fetch_render.gif)
+
 **Render-then-Fetch**: The component mounts immediately (often showing a loading circle), and data is fetched as the user starts interacting with the page.
 
 As a result users are more likely to stick towards the application then move to else where.
+
+![Render then fetch](./screenshoot/render_fetch.gif)
 
 ### **Search,filter and categorize product :**
 
