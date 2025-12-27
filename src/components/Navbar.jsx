@@ -87,11 +87,6 @@ const Navbar = ({ cart, setToggleCart }) => {
                 {cartSize}
               </span>
             </li>
-            <li>
-              <NavLink to="/login">
-                <Btn text="Log in" />
-              </NavLink>
-            </li>
           </ul>
         </li>
       </ul>

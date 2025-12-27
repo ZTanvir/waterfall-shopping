@@ -38,6 +38,7 @@
 }
 .others__shoppingCart {
   cursor: pointer;
+  padding-right: 20px;
 }
 .others__shoppingCart__items {
   border: 1px solid;
