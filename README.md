@@ -49,6 +49,8 @@ As a result users are more likely to stick towards the application then move to 
 
 ### **Search,filter and categorize product :**
 
+<video src="https://github.com/user-attachments/assets/d9b8374d-472b-436c-a98c-51d55e9895c7" controls width="100%"></video>
+
 The shop features a robust filtering and sorting system that allows users to pivot products by category, price, and user ratings without page reloads.
 
 ### **Interactive Store Locator:**
@@ -56,6 +58,8 @@ The shop features a robust filtering and sorting system that allows users to piv
 Using Leaflet.js, the app features an interactive, high-performance map with custom-branded markers, allowing user to locate contacts shop.
 
 ### **Dynamic Shopping Cart:**
+
+<video src="https://github.com/user-attachments/assets/d87dffea-18b0-48a9-a650-7b5d4b4a5d68" controls width="100%"></video>
 
 Users can easily track their items with a cart that updates prices and quantities in real time. If they change their mind, a single click removes an item instantly to keep things moving. Once ready, the cart seamlessly carries everything over to the checkout page so no progress is lost.
 
