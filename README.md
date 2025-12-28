@@ -4,7 +4,7 @@ This project presents a functional online shopping application where users can b
 
 [**View Live Demo**](https://waterfall-shopping.vercel.app/) | [**Browse Source Code**](https://github.com/ZTanvir/waterfall-shopping)
 
-https://github.com/user-attachments/assets/5efa3596-a6ee-4a0e-9c28-28177cc4d928
+<video src="https://github.com/user-attachments/assets/5efa3596-a6ee-4a0e-9c28-28177cc4d928" controls width="100%"></video>
 
 ## Core functionalities
 
@@ -54,6 +54,10 @@ The shop features a robust filtering and sorting system that allows users to piv
 ### **Interactive Store Locator:**
 
 Using Leaflet.js, the app features an interactive, high-performance map with custom-branded markers, allowing user to locate contacts shop.
+
+### **Dynamic Shopping Cart:**
+
+Users can easily track their items with a cart that updates prices and quantities in real time. If they change their mind, a single click removes an item instantly to keep things moving. Once ready, the cart seamlessly carries everything over to the checkout page so no progress is lost.
 
 ## Lesson learned
 
